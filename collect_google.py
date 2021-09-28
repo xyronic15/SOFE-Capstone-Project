@@ -1,7 +1,7 @@
 from dataloader import load_data
 
 # get pandas dataframe of apple history
-apple = load_data('AAPL')
+google = load_data('GOOGL')
 
 # display top 5 rows
-print(apple.head(5))
+print(google.head(5))
