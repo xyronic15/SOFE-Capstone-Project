@@ -9,3 +9,5 @@ apple = load_data('AAPL')
 # print(apple.head(5))
 
 search(apple)
+
+plot_data(apple)
