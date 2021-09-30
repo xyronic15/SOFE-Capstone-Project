@@ -20,7 +20,8 @@ def plot_data(df):
     fig = go.Figure()
     fig.add_trace(trace1)
     fig.add_trace(trace2)
-    fig.update_layout(xaxis_rangeslider_visible=False)
+    fig.update_layout(xaxis_title="Date", yaxis_title="Price ()", xaxis_rangeslider_visible=False)
     fig.show()
 
-
+def plot_pattern(df):
+    trace1 = go.Bar(x=df['Date'], y=['Change'])
