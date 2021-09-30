@@ -24,4 +24,14 @@ def plot_data(df):
     fig.show()
 
 def plot_pattern(df):
-    trace1 = go.Bar(x=df['Date'], y=['Change'])
+
+    avg = df['Change'].mean()
+    bar = go.Bar(x=df['Date'], y=df['Change'])
+
+    fig = go.Figure()
+    fig.add_trace(bar)
+    fig.add_hline(y=avg, line_dash='dot', annotation_text='Average change after 5 days', annotation_position='bottom right')
+    fig.update_layout(xaxis_title="Date", yaxis_title="Change in price after 5 days ()")
+    fig.show()
+
+
