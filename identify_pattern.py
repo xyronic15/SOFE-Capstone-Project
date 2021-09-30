@@ -20,12 +20,13 @@ def search(df):
     for idx in range(len(df)):
         if idx < PREV_DEPTH:
             continue
-        print(df.iloc[idx, 'Close'])
+        print(str(df.iloc[idx, 4]))
         if (df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)).all():
             print('Checking for hammer')
-            if hammer(idx, df.iloc[idx], sma(idx, df)):
+            if hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH)):
                 hammer_count += 1
-                if sma(idx, )
+                # if sma(idx, )
+    print(hammer_count)
 
 
 # checks if candlestick matches hammer pattern
