@@ -1,12 +1,11 @@
 """
-1.) iterate through the dataframe
-2.) identify a hammer candlestick
-    2-1.) If it is a hammer -> check for downtrend 15 stocks before
-    2-2.) Check direction of stock price for next 5 days
-3.) Update whether after hammer price goes up or down
-    3-1.) keep track of number times a hammer occurs
-    3-2.) keep track of number of times price goes up in the upcoming 5 days
-    3-3.) keep track of number of times price goes down in the upcoming 5 days
+Data Frame:
+    0 => date
+    1 => open
+    2 => high
+    3 => low
+    4 => close
+    5 => adj close
 """
 
 # depth for determining previous trend direction
@@ -17,15 +16,19 @@ FUTURE_DEPTH = 5
 
 def search(df):
     hammer_count = 0
+
     for idx in range(len(df)):
         if idx < PREV_DEPTH:
             continue
-        print(str(df.iloc[idx, 4]))
-        if (df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)).all():
-            print('Checking for hammer')
-            if hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH)):
+
+        downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)
+        is_hammer = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
+
+        if downtrend:
+            if is_hammer:
                 hammer_count += 1
-                # if sma(idx, )
+                df['Pattern'] = 'Hammer'
+
     print(hammer_count)
 
 
@@ -35,7 +38,7 @@ def hammer(i, data, body_avg):
     body_lo = min(data['Close'], data['Open'])
     body = body_hi - body_lo
     small_body = bool(body < body_avg)
-    down_shadow = data['Low'] - body_lo
+    down_shadow = body_lo - data['Low']
     up_shadow = data['High'] - body_hi
     factor = 2.0
     shadow_percent = 5.0
@@ -43,20 +46,9 @@ def hammer(i, data, body_avg):
 
     if (small_body and body and body_lo > (data['High'] + data['Low']) / 2
             and down_shadow >= factor * body and not has_up_shadow):
-        print('HAMMER FOUND')
+        return True
 
-
-# checks if candlestick matches inverse hammer pattern
-def inverse_hammer(i, data, body_avg):
-    body_hi = max(data['Close'], data['Open'])
-    body_lo = min(data['Close'], data['Open'])
-    body = body_hi - body_lo
-    small_body = bool(body < body_avg)
-    down_shadow = data['Low'] - body_lo
-    up_shadow = data['High'] - body_hi
-    factor = 2.0
-    shadow_percent = 5.0
-    has_up_shadow = up_shadow > shadow_percent / 100 * body
+    return False
 
 
 # returns the moving average of the last n candlesticks
