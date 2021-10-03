@@ -14,7 +14,11 @@ PREV_DEPTH = 15
 FUTURE_DEPTH = 5
 
 
+# iterating through stock data to identify paterns
 def search(df):
+
+    # dictionary to hold candlesticks that fit a pattern
+    classified = {}
     hammer_count = 0
 
     for idx in range(len(df)):
@@ -28,12 +32,12 @@ def search(df):
             if is_hammer:
                 hammer_count += 1
                 df['Pattern'] = 'Hammer'
-
-    print(hammer_count)
+                classified[idx] = 'Hammer'
 
 
 # checks if candlestick matches hammer pattern
 def hammer(i, data, body_avg):
+
     body_hi = max(data['Close'], data['Open'])
     body_lo = min(data['Close'], data['Open'])
     body = body_hi - body_lo
@@ -53,6 +57,7 @@ def hammer(i, data, body_avg):
 
 # returns the moving average of the last n candlesticks
 def sma(i, data, depth):
+
     cur = data.iloc[i - depth: i]
     trend_sum = 0.0
 
