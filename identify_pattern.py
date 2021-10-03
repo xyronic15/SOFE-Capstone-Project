@@ -31,8 +31,8 @@ def search(df):
         if downtrend:
             if is_hammer:
                 hammer_count += 1
-                df['Pattern'] = 'Hammer'
-                classified[idx] = 'Hammer'
+                #df['Pattern'] = 'Hammer'
+                #classified[idx] = 'Hammer'
 
 
 # checks if candlestick matches hammer pattern
