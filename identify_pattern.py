@@ -54,6 +54,46 @@ def hammer(i, data, body_avg):
 
     return False
 
+# checks if candlestick matches the engulfing bullish pattern
+def engulfing_bullish(i, data, body_avg):
+
+    white_body = data.iloc[i, 1] < data.iloc[i, 4]
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi- body_lo
+    long_body = body > body_avg
+    prev_black_body = data.iloc[i-1, 1] > data.iloc[i-1, 4]
+    prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body = prev_body_hi - prev_body_lo
+    prev_body_avg = sma(i-1, data, PREV_DEPTH)
+    prev_small_body = prev_body < prev_body_avg
+
+    if (white_body and long_body and prev_black_body and prev_small_body 
+            and data.iloc[i, 4] >= data.iloc[i-1, 1] and data.iloc[i, 1] <= data.iloc[i-1, 4]
+            and (data.iloc[i, 4] > data.iloc[i-1, 1] or data.iloc[i, 1] < data.iloc[i-1, 4])):
+        return True
+
+    return False
+
+# checks if candlestick matches the piercing line pattern
+def piercing_line(i, data, body_avg):
+    
+    prev_downtrend = data.iloc[i-1, 4] < sma(i-1, data, PREV_DEPTH)
+    prev_black_body = data.iloc[i-1, 1] > data.iloc[i-1, 4]
+    prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body = prev_body_hi - prev_body_lo
+    prev_long_body = prev_body > sma(i-1, data, PREV_DEPTH)
+    white_body = data.iloc[i, 1] < data.iloc[i, 4]
+    prev_mid = (prev_body / 2) + prev_body_lo
+
+    if ((prev_downtrend and prev_black_body and prev_long_body) and 
+            (white_body and data.iloc[i, 1] <= data.iloc[i-1, 3] and 
+            data.iloc[i, 4] > prev_mid and data.iloc[i, 4] < data.iloc[i-1, 1])):
+        return True
+    
+    return False
 
 # returns the moving average of the last n candlesticks
 def sma(i, data, depth):
