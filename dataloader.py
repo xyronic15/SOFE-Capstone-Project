@@ -25,13 +25,17 @@ def load_all():
     stock_data['Amazon'] = load_data('AMZN')
     stock_data['Tesla'] = load_data('TSLA')
 
+def main():
 
-load_all()
+    load_all()
 
-for pattern in identified_data.keys():
-    for company_name, df in stock_data.items():
-        identified_data[pattern].extend(search(company_name, df, pattern))
-        print(pattern, company_name)
+    for pattern in identified_data.keys():
+        for company_name, df in stock_data.items():
+            identified_data[pattern].extend(search(company_name, df, pattern))
+            print(pattern, company_name)
 
 
-print(identified_data['inv_hammer'])
+    print(identified_data['inv_hammer'])
+
+if __name__ == "__main__":
+    main()
