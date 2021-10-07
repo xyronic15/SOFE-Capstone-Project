@@ -8,6 +8,8 @@ apple = load_data('AAPL')
 # display top 5 rows
 # print(apple.head(5))
 
-search(apple)
+# engulfing_dates = search(apple)
+piercing_dates = search(apple)
 
-plot_data(apple)
+# print(engulfing_dates)
+print(piercing_dates)
