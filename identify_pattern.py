@@ -32,7 +32,7 @@ def search(df):
 
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)
         is_hammer = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
-        is_engulfing = engulfing_bullish(idx, df, body_ema(idx, df, PREV_DEPTH))
+        is_engulfing = engulfing_bullish(idx, df, body_sma(idx, df, PREV_DEPTH))
         # is_piercing = piercing_line(idx, df)
 
         if downtrend:
@@ -40,7 +40,8 @@ def search(df):
                 hammer_count += 1
                 #df['Pattern'] = 'Hammer'
                 #classified[idx] = 'Hammer'
-            if is_engulfing:
+        
+        if is_engulfing:
                 engulfing_count += 1
                 dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
         
@@ -85,7 +86,7 @@ def engulfing_bullish(i, data, body_avg):
     prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body = prev_body_hi - prev_body_lo
-    prev_body_avg = body_ema(i-1, data, PREV_DEPTH)
+    prev_body_avg = body_sma(i-1, data, PREV_DEPTH)
     prev_small_body = prev_body < prev_body_avg
 
     if (white_body and long_body and prev_black_body and prev_small_body 
@@ -129,7 +130,7 @@ def sma(i, data, depth):
 def body_sma(i, data, depth):
     
     cur = data.iloc[i - depth: i]
-    print(cur.head(5))
+    # print(cur.head(5))
     trend_sum = 0.0
 
     for idx, row in cur.iterrows():
