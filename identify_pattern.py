@@ -1,3 +1,5 @@
+import pandas as pd
+
 """
 Data Frame:
     0 => date
@@ -18,8 +20,11 @@ FUTURE_DEPTH = 5
 def search(df):
 
     # dictionary to hold candlesticks that fit a pattern
-    classified = {}
+    # classified = {}
+    dates = pd.DataFrame(columns=['Date'])
     hammer_count = 0
+    engulfing_count = 0
+    piercing_count = 0
 
     for idx in range(len(df)):
         if idx < PREV_DEPTH:
@@ -27,12 +32,26 @@ def search(df):
 
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)
         is_hammer = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
+        is_engulfing = engulfing_bullish(idx, df, sma(idx, df, PREV_DEPTH))
+        is_piercing = piercing_line(idx, df)
 
         if downtrend:
             if is_hammer:
                 hammer_count += 1
                 #df['Pattern'] = 'Hammer'
                 #classified[idx] = 'Hammer'
+            # if is_engulfing:
+            #     engulfing_count += 1
+            #     dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
+        
+        if is_piercing:
+            piercing_count += 1
+            dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
+
+    return dates
+
+
+
 
 
 # checks if candlestick matches hammer pattern
@@ -77,7 +96,7 @@ def engulfing_bullish(i, data, body_avg):
     return False
 
 # checks if candlestick matches the piercing line pattern
-def piercing_line(i, data, body_avg):
+def piercing_line(i, data):
     
     prev_downtrend = data.iloc[i-1, 4] < sma(i-1, data, PREV_DEPTH)
     prev_black_body = data.iloc[i-1, 1] > data.iloc[i-1, 4]
