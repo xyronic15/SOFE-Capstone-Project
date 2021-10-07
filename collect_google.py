@@ -8,4 +8,4 @@ from identify_pattern import search
 google = load_data('GOOGL')
 
 # plot_data(google)
-search(google)
+search('Google', google, 'hammer')
