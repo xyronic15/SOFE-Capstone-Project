@@ -8,8 +8,14 @@ apple = load_data('AAPL')
 # display top 5 rows
 # print(apple.head(5))
 
-# engulfing_dates = search(apple)
-piercing_dates = search("Apple", apple, 'piercing')
+engulfing_dates = search('Apple', apple, 'engulfing')
+# piercing_dates = search("Apple", apple, 'piercing')
 
 # print(engulfing_dates)
-print(piercing_dates)
+# for i in range(len(piercing_dates)):
+
+#     print(piercing_dates[i])
+
+for i in range(len(engulfing_dates)):
+
+    print(engulfing_dates[i])

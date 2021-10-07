@@ -32,9 +32,11 @@ def search(name, df, pattern_type):
         is_match = False
         if downtrend:
             if pattern_type == 'hammer':
-                is_match = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH_BODY_AVG))
+                is_match = hammer(idx, df.iloc[idx], body_sma(idx, df, PREV_DEPTH_BODY_AVG))
             if pattern_type == 'inv_hammer':
-                is_match = inv_hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH_BODY_AVG))
+                is_match = inv_hammer(idx, df.iloc[idx], body_sma(idx, df, PREV_DEPTH_BODY_AVG))
+            if pattern_type == 'engulfing':
+                is_match = engulfing_bullish(idx, df, body_sma(idx, df, PREV_DEPTH_BODY_AVG))
         if pattern_type == 'piercing':
             is_match = piercing_line(idx, df)
 
