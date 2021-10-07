@@ -27,26 +27,26 @@ def search(df):
     piercing_count = 0
 
     for idx in range(len(df)):
-        if idx < PREV_DEPTH:
+        if idx < PREV_DEPTH + 1:
             continue
 
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)
         is_hammer = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
-        is_engulfing = engulfing_bullish(idx, df, sma(idx, df, PREV_DEPTH))
-        is_piercing = piercing_line(idx, df)
+        is_engulfing = engulfing_bullish(idx, df, body_ema(idx, df, PREV_DEPTH))
+        # is_piercing = piercing_line(idx, df)
 
         if downtrend:
             if is_hammer:
                 hammer_count += 1
                 #df['Pattern'] = 'Hammer'
                 #classified[idx] = 'Hammer'
-            # if is_engulfing:
-            #     engulfing_count += 1
-            #     dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
+            if is_engulfing:
+                engulfing_count += 1
+                dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
         
-        if is_piercing:
-            piercing_count += 1
-            dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
+        # if is_piercing:
+        #     piercing_count += 1
+        #     dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
 
     return dates
 
@@ -79,13 +79,13 @@ def engulfing_bullish(i, data, body_avg):
     white_body = data.iloc[i, 1] < data.iloc[i, 4]
     body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
     body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
-    body = body_hi- body_lo
+    body = body_hi - body_lo
     long_body = body > body_avg
     prev_black_body = data.iloc[i-1, 1] > data.iloc[i-1, 4]
     prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body = prev_body_hi - prev_body_lo
-    prev_body_avg = sma(i-1, data, PREV_DEPTH)
+    prev_body_avg = body_ema(i-1, data, PREV_DEPTH)
     prev_small_body = prev_body < prev_body_avg
 
     if (white_body and long_body and prev_black_body and prev_small_body 
@@ -103,7 +103,7 @@ def piercing_line(i, data):
     prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body = prev_body_hi - prev_body_lo
-    prev_long_body = prev_body > body_sma(i-1, data, PREV_DEPTH)
+    prev_long_body = prev_body > body_ema(i-1, data, PREV_DEPTH)
     white_body = data.iloc[i, 1] < data.iloc[i, 4]
     prev_mid = (prev_body / 2) + prev_body_lo
 
@@ -129,6 +129,7 @@ def sma(i, data, depth):
 def body_sma(i, data, depth):
     
     cur = data.iloc[i - depth: i]
+    print(cur.head(5))
     trend_sum = 0.0
 
     for idx, row in cur.iterrows():
@@ -140,3 +141,23 @@ def body_sma(i, data, depth):
         trend_sum += body
 
     return trend_sum / depth
+
+def body_ema(i, data, depth):
+    
+    cur = data.iloc[i - depth: i]
+    # print(data.iloc[i - depth: i])
+    body_list = []
+    trend_sum = 0.0
+
+    for idx, row in cur.iterrows():
+
+        body_hi = max(row['Close'], row['Open'])
+        body_lo = min(row['Close'], row['Open'])
+        body = body_hi - body_lo
+
+        body_list.append(body)
+    
+    # print(body_list)
+    bodies = pd.DataFrame({'Body': body_list})
+
+    return bodies['Body'].ewm(span=len(body_list)).mean()[len(body_list)-1]
