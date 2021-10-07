@@ -103,7 +103,7 @@ def piercing_line(i, data):
     prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body = prev_body_hi - prev_body_lo
-    prev_long_body = prev_body > sma(i-1, data, PREV_DEPTH)
+    prev_long_body = prev_body > body_sma(i-1, data, PREV_DEPTH)
     white_body = data.iloc[i, 1] < data.iloc[i, 4]
     prev_mid = (prev_body / 2) + prev_body_lo
 
@@ -122,5 +122,21 @@ def sma(i, data, depth):
 
     for idx, row in cur.iterrows():
         trend_sum += row['Close']
+
+    return trend_sum / depth
+
+
+def body_sma(i, data, depth):
+    
+    cur = data.iloc[i - depth: i]
+    trend_sum = 0.0
+
+    for idx, row in cur.iterrows():
+
+        body_hi = max(row['Close'], row['Open'])
+        body_lo = min(row['Close'], row['Open'])
+        body = body_hi - body_lo
+
+        trend_sum += body
 
     return trend_sum / depth
