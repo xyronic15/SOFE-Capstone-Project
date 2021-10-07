@@ -16,11 +16,6 @@ PREV_DEPTH_BODY_AVG = 14
 # depth for determining the trend direction
 PREV_DEPTH_TREND = 50
 
-<<<<<<< HEAD
-# depth for determining previous trend direction
-PREV_DEPTH = 14
-=======
->>>>>>> main
 # depth for determining upcoming trend direction
 FUTURE_DEPTH = 10
 
@@ -28,43 +23,9 @@ FUTURE_DEPTH = 10
 # iterating through stock data to identify patterns
 def search(name, df, pattern_type):
 
-<<<<<<< HEAD
-    # dictionary to hold candlesticks that fit a pattern
-    # classified = {}
-    dates = pd.DataFrame(columns=['Date'])
-    hammer_count = 0
-    engulfing_count = 0
-    piercing_count = 0
-
-    for idx in range(len(df)):
-        if idx < PREV_DEPTH + 1:
-            continue
-
-        downtrend = df.iloc[idx, 4] < sma(idx, df, 50)
-        is_hammer = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
-        # is_engulfing = engulfing_bullish(idx, df, body_ema(idx, df, PREV_DEPTH))
-        is_piercing = piercing_line(idx, df)
-
-        if downtrend:
-            if is_hammer:
-                hammer_count += 1
-                #df['Pattern'] = 'Hammer'
-                #classified[idx] = 'Hammer'
-            # if is_engulfing:
-            #     engulfing_count += 1
-            #     dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)        
-        
-        if is_piercing:
-            piercing_count += 1
-            dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
-
-    return dates
-
-
-
-=======
     # dataframe to hold identified candlesticks to be exported to csv after
     classified = []
+    print(pattern_type)
 
     for idx in range(len(df)):
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH_TREND)
@@ -74,12 +35,13 @@ def search(name, df, pattern_type):
                 is_match = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH_BODY_AVG))
             if pattern_type == 'inv_hammer':
                 is_match = inv_hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH_BODY_AVG))
+        if pattern_type == 'piercing':
+            is_match = piercing_line(idx, df)
 
-            if is_match:
-                classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Closing Price': df.iloc[idx, 4]})
+        if is_match:
+            classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Closing Price': df.iloc[idx, 4]})
 
     return classified
->>>>>>> main
 
 
 # checks if candlestick matches hammer pattern
@@ -113,7 +75,7 @@ def engulfing_bullish(i, data, body_avg):
     prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body = prev_body_hi - prev_body_lo
-    prev_body_avg = body_ema(i-1, data, PREV_DEPTH)
+    prev_body_avg = body_sma(i-1, data, PREV_DEPTH_BODY_AVG)
     prev_small_body = prev_body < prev_body_avg
 
     if (white_body and long_body and prev_black_body and prev_small_body 
@@ -126,12 +88,12 @@ def engulfing_bullish(i, data, body_avg):
 # checks if candlestick matches the piercing line pattern
 def piercing_line(i, data):
     
-    prev_downtrend = data.iloc[i-1, 4] < sma(i-1, data, PREV_DEPTH)
+    prev_downtrend = data.iloc[i-1, 4] < sma(i-1, data, PREV_DEPTH_TREND)
     prev_black_body = data.iloc[i-1, 1] > data.iloc[i-1, 4]
     prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body = prev_body_hi - prev_body_lo
-    prev_long_body = prev_body > body_ema(i-1, data, PREV_DEPTH)
+    prev_long_body = prev_body > body_sma(i-1, data, PREV_DEPTH_BODY_AVG)
     white_body = data.iloc[i, 1] < data.iloc[i, 4]
     prev_mid = (prev_body / 2) + prev_body_lo
 

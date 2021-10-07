@@ -9,7 +9,7 @@ apple = load_data('AAPL')
 # print(apple.head(5))
 
 # engulfing_dates = search(apple)
-piercing_dates = search(apple)
+piercing_dates = search("Apple", apple, 'piercing')
 
 # print(engulfing_dates)
 print(piercing_dates)
