@@ -11,7 +11,7 @@ Data Frame:
 """
 
 # depth for determining previous trend direction
-PREV_DEPTH = 15
+PREV_DEPTH = 14
 # depth for determining upcoming trend direction
 FUTURE_DEPTH = 5
 
@@ -30,24 +30,23 @@ def search(df):
         if idx < PREV_DEPTH + 1:
             continue
 
-        downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)
+        downtrend = df.iloc[idx, 4] < sma(idx, df, 50)
         is_hammer = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
-        is_engulfing = engulfing_bullish(idx, df, body_sma(idx, df, PREV_DEPTH))
-        # is_piercing = piercing_line(idx, df)
+        # is_engulfing = engulfing_bullish(idx, df, body_ema(idx, df, PREV_DEPTH))
+        is_piercing = piercing_line(idx, df)
 
         if downtrend:
             if is_hammer:
                 hammer_count += 1
                 #df['Pattern'] = 'Hammer'
                 #classified[idx] = 'Hammer'
+            # if is_engulfing:
+            #     engulfing_count += 1
+            #     dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)        
         
-        if is_engulfing:
-                engulfing_count += 1
-                dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
-        
-        # if is_piercing:
-        #     piercing_count += 1
-        #     dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
+        if is_piercing:
+            piercing_count += 1
+            dates = dates.append({'Date': df.iloc[idx, 0]}, ignore_index=True)
 
     return dates
 
@@ -86,7 +85,7 @@ def engulfing_bullish(i, data, body_avg):
     prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
     prev_body = prev_body_hi - prev_body_lo
-    prev_body_avg = body_sma(i-1, data, PREV_DEPTH)
+    prev_body_avg = body_ema(i-1, data, PREV_DEPTH)
     prev_small_body = prev_body < prev_body_avg
 
     if (white_body and long_body and prev_black_body and prev_small_body 
