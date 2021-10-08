@@ -35,8 +35,9 @@ def main():
             identified_data[pattern].extend(search(company_name, df, pattern))
             print(pattern, company_name)
 
+    for i in range(len(identified_data['inv_hammer'])):
 
-    print(identified_data['inv_hammer'])
+        print(identified_data['inv_hammer'][i])
 
 if __name__ == "__main__":
     main()

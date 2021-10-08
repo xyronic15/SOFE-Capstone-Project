@@ -41,7 +41,12 @@ def search(name, df, pattern_type):
             is_match = piercing_line(idx, df)
 
         if is_match:
-            classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Closing Price': df.iloc[idx, 4]})
+            classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Closing Price': df.iloc[idx, 4],
+                'High after 1 day': df.iloc[min(idx+1, len(df)-1), 2], 'High after 2 days': df.iloc[min(idx+2, len(df)-1), 2],
+                'High after 3 days': df.iloc[min(idx+3, len(df)-1), 2], 'High after 4 days': df.iloc[min(idx+4, len(df)-1), 2],
+                'High after 5 days': df.iloc[min(idx+5, len(df)-1), 2], 'High after 6 days': df.iloc[min(idx+6, len(df)-1), 2],
+                'High after 7 days': df.iloc[min(idx+7, len(df)-1), 2], 'High after 8 days': df.iloc[min(idx+8, len(df)-1), 2],
+                'High after 9 days': df.iloc[min(idx+9, len(df)-1), 2], 'High after 10 days': df.iloc[min(idx+10, len(df)-1), 2],})
 
     return classified
 
