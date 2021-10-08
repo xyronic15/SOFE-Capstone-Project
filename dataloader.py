@@ -1,5 +1,5 @@
 from datetime import date
-
+import pandas as pd
 import yfinance as yf
 from identify_pattern import search
 
@@ -35,9 +35,16 @@ def main():
             identified_data[pattern].extend(search(company_name, df, pattern))
             print(pattern, company_name)
 
-    for i in range(len(identified_data['inv_hammer'])):
+    # for i in range(len(identified_data['inv_hammer'])):
 
-        print(identified_data['inv_hammer'][i])
+    #     print(identified_data['inv_hammer'][i])
+
+    for pattern in identified_data.keys():
+
+        file_name = pattern + "_pattern.csv"
+        pattern_data = pd.DataFrame(identified_data[pattern])
+        pattern_data.to_csv(file_name)
+
 
 if __name__ == "__main__":
     main()
