@@ -25,7 +25,7 @@ def search(name, df, pattern_type):
 
     # dataframe to hold identified candlesticks to be exported to csv after
     classified = []
-    print(pattern_type)
+    # print(pattern_type)
 
     for idx in range(len(df)):
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH_TREND)
@@ -125,6 +125,30 @@ def inv_hammer(i, data, body_avg):
 
     return False
 
+# checks if candlestick matches rising three methods pattern
+def rising_three_methods(i, data, body_avg):
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi - body_lo
+    dojiBodyPercent = 5
+    shadowPercent = 5
+    Range = data['High'] - data['Low']
+    upTrend = data ['Close'] > body_avg
+    upShadow= data ['High'] - body_hi
+    dnSHadow = body_lo - data['low']
+    white_body = data.iloc[i, 1] < data.iloc[i, 4]
+    black_body = data.iloc[i, 1] > data.iloc[i, 4]
+    prev_body_hi = max(data.iloc[i - 1, 1], data.iloc[i - 1, 4])
+    prev_white_body = data.iloc[i - 1, 1] < data.iloc[i - 1, 4]
+    longBody = body > body_avg
+    hasUpHadow = upShadow > shadowPercent / 100 * body
+    hasDnShadow = dnSHadow > shadowPercent / 100 * body
+    isDojiBody = Range > 0 and body <= Range * dojiBodyPercent / 100
+    if (upTrend and (not isDojiBody or (hasUpHadow and hasDnShadow)) and abs(data['High'] - prev_body_hi) <= body_avg * 0.05 and prev_white_body and black_body and (longBody - 1)):
+        return True
+
+    return False
+
 
 # returns the moving average of the last n candlesticks for finding downtrend
 def sma(i, data, depth):
@@ -153,29 +177,6 @@ def body_sma(i, data, depth):
         trend_sum += body
 
     return trend_sum / depth
-
-def rising_three_methods(i, data, body_avg):
-    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
-    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
-    body = body_hi - body_lo
-    dojiBodyPercent = 5
-    shadowPercent = 5
-    Range = data['High'] - data['Low']
-    upTrend = data ['Close'] > body_avg
-    upShadow= data ['High'] - body_hi
-    dnSHadow = body_lo - data['low']
-    white_body = data.iloc[i, 1] < data.iloc[i, 4]
-    black_body = data.iloc[i, 1] > data.iloc[i, 4]
-    prev_body_hi = max(data.iloc[i - 1, 1], data.iloc[i - 1, 4])
-    prev_white_body = data.iloc[i - 1, 1] < data.iloc[i - 1, 4]
-    longBody = body > body_avg
-    hasUpHadow = upShadow > shadowPercent / 100 * body
-    hasDnShadow = dnSHadow > shadowPercent / 100 * body
-    isDojiBody = Range > 0 and body <= Range * dojiBodyPercent / 100
-    if (upTrend and (not isDojiBody or (hasUpHadow and hasDnSHadow)) and abs(data['High'] - prev_body_hi) < = body_avg * 0.05 and prev_white_body and blackBody and (longBody - 1))
-    return True
-
-return False
 
 def body_ema(i, data, depth):
     
