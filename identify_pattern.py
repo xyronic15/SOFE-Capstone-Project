@@ -154,6 +154,29 @@ def body_sma(i, data, depth):
 
     return trend_sum / depth
 
+def rising_three_methods(i, data, body_avg):
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi - body_lo
+    dojiBodyPercent = 5
+    shadowPercent = 5
+    Range = data['High'] - data['Low']
+    upTrend = data ['Close'] > body_avg
+    upShadow= data ['High'] - body_hi
+    dnSHadow = body_lo - data['low']
+    white_body = data.iloc[i, 1] < data.iloc[i, 4]
+    black_body = data.iloc[i, 1] > data.iloc[i, 4]
+    prev_body_hi = max(data.iloc[i - 1, 1], data.iloc[i - 1, 4])
+    prev_white_body = data.iloc[i - 1, 1] < data.iloc[i - 1, 4]
+    longBody = body > body_avg
+    hasUpHadow = upShadow > shadowPercent / 100 * body
+    hasDnShadow = dnSHadow > shadowPercent / 100 * body
+    isDojiBody = Range > 0 and body <= Range * dojiBodyPercent / 100
+    if (upTrend and (not isDojiBody or (hasUpHadow and hasDnSHadow)) and abs(data['High'] - prev_body_hi) < = body_avg * 0.05 and prev_white_body and blackBody and (longBody - 1))
+    return True
+
+return False
+
 def body_ema(i, data, depth):
     
     cur = data.iloc[i - depth: i]
