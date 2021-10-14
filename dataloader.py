@@ -7,8 +7,8 @@ from identify_pattern import search
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-# patterns = ['hammer', 'inv_hammer', 'engulfing', 'piercing', 'morning_star', 'white_soldiers', 'rising_method']
-patterns = ['hammer', 'inv_hammer', 'engulfing', 'piercing']
+# patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'white_soldiers', 'rising_method']
+patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing']
 # patterns_df = dict.fromkeys(patterns)
 identified_data = {pattern: [] for pattern in patterns}
 stock_data = {}
