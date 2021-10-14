@@ -38,6 +38,10 @@ def search(name, df, pattern_type):
                 is_match = inv_hammer(idx, df.iloc[idx], body_sma(idx, df, PREV_DEPTH_BODY_AVG))
             if pattern_type == 'engulfing_bullish':
                 is_match = engulfing_bullish(idx, df, body_sma(idx, df, PREV_DEPTH_BODY_AVG))
+
+        if uptrend:
+            is_match = evening_star(idx, df, body_sma(idx, df, PREV_DEPTH_BODY_AVG))
+        
         if pattern_type == 'piercing':
             is_match = piercing_line(idx, df)
 
@@ -158,7 +162,30 @@ def rising_three_methods(i, data, body_avg):
 
 ### Bearish patterns
 
-# 
+# checks if the candlestick matches evening star pattern
+def evening_star(i, data, body_avg):
+
+    prev2_body_hi = max(data.iloc[i-2, 1], data.iloc[i-2, 4])
+    prev2_body_lo = min(data.iloc[i-2, 1], data.iloc[i-2, 4])
+    prev2_body = prev2_body_hi - prev2_body_lo
+    prev2_long_body = prev2_body > body_sma(i-2, data, PREV_DEPTH_BODY_AVG)
+    prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body = prev_body_hi - prev_body_lo
+    prev_small_body = prev_body < body_sma(i-1, data, PREV_DEPTH_BODY_AVG)
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi - body_lo
+    long_body = body > body_avg
+    prev2_white_body = data.iloc[i-2, 1] < data.iloc[i-2, 4]
+    black_body = data.iloc[i, 1] > data.iloc[i, 4]
+
+    if (prev2_long_body and prev_small_body and long_body and prev2_white_body and
+            prev_body_lo > prev2_body_hi and black_body and body_lo <= ((prev2_body/2) + prev2_body_lo) and 
+            body_lo > prev2_body_lo and prev_body_lo > body_hi):
+        return True
+
+    return False 
 
 ### Helper functions
 # returns the moving average of the last n candlesticks for finding downtrend
