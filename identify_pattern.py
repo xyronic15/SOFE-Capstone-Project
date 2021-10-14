@@ -29,6 +29,7 @@ def search(name, df, pattern_type):
 
     for idx in range(len(df)):
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH_TREND)
+        uptrend = df.iloc[idx, 4] > sma(idx, df, PREV_DEPTH_TREND)
         is_match = False
         if downtrend:
             if pattern_type == 'hammer':
@@ -51,6 +52,7 @@ def search(name, df, pattern_type):
     return classified
 
 
+### Bullish patterns
 # checks if candlestick matches hammer pattern
 def hammer(i, data, body_avg):
 
@@ -154,7 +156,11 @@ def rising_three_methods(i, data, body_avg):
 
     return False
 
+### Bearish patterns
 
+# 
+
+### Helper functions
 # returns the moving average of the last n candlesticks for finding downtrend
 def sma(i, data, depth):
 
