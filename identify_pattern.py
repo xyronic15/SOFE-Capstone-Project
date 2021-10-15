@@ -211,7 +211,7 @@ def three_black_crows(i, data):
         black_bodies[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
         ranges[n] = data.iloc[i-n, 2] - data.iloc[i-n, 3]
         dn_shadows[n] = body_lo - data.iloc[i-n, 3]
-        bcrw_no_dn_sh[n] = range[n] * (dn_shadow_percent / 100) > dn_shadows[n]
+        bcrw_no_dn_sh[n] = (ranges[n] * (dn_shadow_percent / 100)) > dn_shadows[n]
         open[n] = data.iloc[i-n, 1]
         close[n] = data.iloc[i-n, 4]
 

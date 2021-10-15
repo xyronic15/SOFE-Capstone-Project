@@ -32,28 +32,27 @@ def main():
 
     load_all()
 
+    pattern_data_bullish = []
+    pattern_data_bearish = []
+
     for pattern in identified_data_bullish.keys():
         for company_name, df in stock_data.items():
             identified_data_bullish[pattern].extend(search(company_name, df, pattern))
             print(pattern, company_name)
-
-    # for i in range(len(identified_data['inv_hammer'])):
-
-    #     print(identified_data['inv_hammer'][i])
-
-    pattern_data_bullish = []
-    for pattern in identified_data_bullish.keys():
-
-        # file_name = pattern + "_pattern.csv"
-        # pattern_data_bullish = pd.DataFrame(identified_data_bullish[pattern])
-        # pattern_data.to_csv(file_name)
-
         pattern_data_bullish.extend(identified_data_bullish[pattern])
     
+    for pattern in identified_data_bearish.keys():
+        for company_name, df in stock_data.items():
+            identified_data_bearish[pattern].extend(search(company_name, df, pattern))
+            print(pattern, company_name)
+        pattern_data_bearish.extend(identified_data_bearish[pattern])
+        
     # print(pattern_data_bullish)
 
     final_data_bullish = pd.DataFrame(pattern_data_bullish)
     final_data_bullish.to_csv("bullish_patterns.csv")
+    final_data_bearish = pd.DataFrame(pattern_data_bearish)
+    final_data_bearish.to_csv("bearish_patterns.csv")
 
 
 if __name__ == "__main__":
