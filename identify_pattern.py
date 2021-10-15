@@ -29,19 +29,27 @@ def search(name, df, pattern_type):
 
     for idx in range(len(df)):
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH_TREND)
+        uptrend = df.iloc[idx, 4] > sma(idx, df, PREV_DEPTH_TREND)
         is_match = False
         if downtrend:
             if pattern_type == 'hammer':
                 is_match = hammer(idx, df.iloc[idx], body_sma(idx, df, PREV_DEPTH_BODY_AVG))
             if pattern_type == 'inv_hammer':
                 is_match = inv_hammer(idx, df.iloc[idx], body_sma(idx, df, PREV_DEPTH_BODY_AVG))
-            if pattern_type == 'engulfing':
+            if pattern_type == 'engulfing_bullish':
                 is_match = engulfing_bullish(idx, df, body_sma(idx, df, PREV_DEPTH_BODY_AVG))
+
+        if uptrend:
+            if pattern_type == 'evening_star':
+                is_match = evening_star(idx, df, body_sma(idx, df, PREV_DEPTH_BODY_AVG))
+        
         if pattern_type == 'piercing':
             is_match = piercing_line(idx, df)
+        if pattern_type == 'three_black_crows':
+            is_match = three_black_crows(idx, df)
 
         if is_match:
-            classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Closing Price': df.iloc[idx, 4],
+            classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Pattern': pattern_type, 'Closing Price': df.iloc[idx, 4],
                 'High after 1 day': df.iloc[min(idx+1, len(df)-1), 2], 'High after 2 days': df.iloc[min(idx+2, len(df)-1), 2],
                 'High after 3 days': df.iloc[min(idx+3, len(df)-1), 2], 'High after 4 days': df.iloc[min(idx+4, len(df)-1), 2],
                 'High after 5 days': df.iloc[min(idx+5, len(df)-1), 2], 'High after 6 days': df.iloc[min(idx+6, len(df)-1), 2],
@@ -51,6 +59,7 @@ def search(name, df, pattern_type):
     return classified
 
 
+### Bullish patterns
 # checks if candlestick matches hammer pattern
 def hammer(i, data, body_avg):
 
@@ -154,7 +163,68 @@ def rising_three_methods(i, data, body_avg):
 
     return False
 
+### Bearish patterns
 
+# checks if the candlestick matches evening star pattern
+def evening_star(i, data, body_avg):
+
+    prev2_body_hi = max(data.iloc[i-2, 1], data.iloc[i-2, 4])
+    prev2_body_lo = min(data.iloc[i-2, 1], data.iloc[i-2, 4])
+    prev2_body = prev2_body_hi - prev2_body_lo
+    prev2_long_body = prev2_body > body_sma(i-2, data, PREV_DEPTH_BODY_AVG)
+    prev_body_hi = max(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body_lo = min(data.iloc[i-1, 1], data.iloc[i-1, 4])
+    prev_body = prev_body_hi - prev_body_lo
+    prev_small_body = prev_body < body_sma(i-1, data, PREV_DEPTH_BODY_AVG)
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi - body_lo
+    long_body = body > body_avg
+    prev2_white_body = data.iloc[i-2, 1] < data.iloc[i-2, 4]
+    black_body = data.iloc[i, 1] > data.iloc[i, 4]
+
+    if (prev2_long_body and prev_small_body and long_body and prev2_white_body and
+            prev_body_lo > prev2_body_hi and black_body and body_lo <= ((prev2_body/2) + prev2_body_lo) and 
+            body_lo > prev2_body_lo and prev_body_lo > body_hi):
+        return True
+
+    return False 
+
+def three_black_crows(i, data):
+
+    long_bodies = [None] * 3
+    black_bodies = [None] * 3
+    ranges = [None] * 3
+    dn_shadows = [None] * 3
+    bcrw_no_dn_sh = [None] * 3
+    dn_shadow_percent = 5.0
+    open = [None] * 3
+    close = [None] * 3
+
+    for n in range(3):
+
+        body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_lo = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body = body_hi - body_lo
+        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
+        long_bodies[n] = body > body_avg
+        black_bodies[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
+        ranges[n] = data.iloc[i-n, 2] - data.iloc[i-n, 3]
+        dn_shadows[n] = body_lo - data.iloc[i-n, 3]
+        bcrw_no_dn_sh[n] = (ranges[n] * (dn_shadow_percent / 100)) > dn_shadows[n]
+        open[n] = data.iloc[i-n, 1]
+        close[n] = data.iloc[i-n, 4]
+
+    if (long_bodies[0] and long_bodies[1] and long_bodies[2] and black_bodies[0] and black_bodies[1] and black_bodies[2] and
+            close[0] < close[1] and close[1] < close[2] and open[0] > close[1] and open[0] < open[1] and open[1] > close[2] and
+            open[1] < open[2] and bcrw_no_dn_sh[0] and bcrw_no_dn_sh[1] and bcrw_no_dn_sh[2]):
+        return True
+
+    return False
+
+
+
+### Helper functions
 # returns the moving average of the last n candlesticks for finding downtrend
 def sma(i, data, depth):
 
