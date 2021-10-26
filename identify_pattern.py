@@ -42,12 +42,15 @@ def search(name, df, pattern_type):
         if uptrend:
             if pattern_type == 'evening_star':
                 is_match = evening_star(idx, df, body_sma(idx, df, PREV_DEPTH_BODY_AVG))
+            if pattern_type == 'shooting_star':
+                is_match = shooting_star(idx, df.iloc[idx], body_sma(idx, df, PREV_DEPTH_BODY_AVG))
         
         if pattern_type == 'piercing':
             is_match = piercing_line(idx, df)
         if pattern_type == 'three_black_crows':
             is_match = three_black_crows(idx, df)
 
+        '''
         if is_match:
             classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Pattern': pattern_type, 'Closing Price': df.iloc[idx, 4],
                 'High after 1 day': df.iloc[min(idx+1, len(df)-1), 2], 'High after 2 days': df.iloc[min(idx+2, len(df)-1), 2],
@@ -55,6 +58,10 @@ def search(name, df, pattern_type):
                 'High after 5 days': df.iloc[min(idx+5, len(df)-1), 2], 'High after 6 days': df.iloc[min(idx+6, len(df)-1), 2],
                 'High after 7 days': df.iloc[min(idx+7, len(df)-1), 2], 'High after 8 days': df.iloc[min(idx+8, len(df)-1), 2],
                 'High after 9 days': df.iloc[min(idx+9, len(df)-1), 2], 'High after 10 days': df.iloc[min(idx+10, len(df)-1), 2],})
+        '''
+        if is_match:
+            classified.append(
+                {'Date': df.iloc[idx, 0]})
 
     return classified
 
@@ -101,6 +108,7 @@ def engulfing_bullish(i, data, body_avg):
 
     return False
 
+
 # checks if candlestick matches the piercing line pattern
 def piercing_line(i, data):
     
@@ -120,6 +128,7 @@ def piercing_line(i, data):
     
     return False
 
+
 # checks if candlestick matches inverted hammer pattern
 def inv_hammer(i, data, body_avg):
 
@@ -138,6 +147,7 @@ def inv_hammer(i, data, body_avg):
         return True
 
     return False
+
 
 # checks if candlestick matches rising three methods pattern
 def rising_three_methods(i, data, body_avg):
@@ -163,7 +173,8 @@ def rising_three_methods(i, data, body_avg):
 
     return False
 
-### Bearish patterns
+
+# Bearish patterns
 
 # checks if the candlestick matches evening star pattern
 def evening_star(i, data, body_avg):
@@ -189,6 +200,7 @@ def evening_star(i, data, body_avg):
         return True
 
     return False 
+
 
 def three_black_crows(i, data):
 
@@ -223,8 +235,27 @@ def three_black_crows(i, data):
     return False
 
 
+# bearish shooting star
 
-### Helper functions
+def shooting_star(i, data, body_avg):
+    body_hi = max(data['Close'], data['Open'])
+    body_lo = min(data['Close'], data['Open'])
+    body = body_hi - body_lo
+    small_body = bool(body < body_avg)
+    down_shadow = body_lo - data['Low']
+    up_shadow = data['High'] - body_hi
+    factor = 2.0
+    shadow_percent = 5.0
+    has_down_shadow = down_shadow > shadow_percent / 100 * body
+
+    if (small_body and body and body_hi < (data['High'] + data['Low']) / 2
+            and up_shadow >= factor * body and not has_down_shadow):
+        return True
+
+    return False
+
+
+# Helper functions
 # returns the moving average of the last n candlesticks for finding downtrend
 def sma(i, data, depth):
 
@@ -252,6 +283,7 @@ def body_sma(i, data, depth):
         trend_sum += body
 
     return trend_sum / depth
+
 
 def body_ema(i, data, depth):
     
