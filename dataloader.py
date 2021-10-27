@@ -23,28 +23,34 @@ def load_data(ticker):
 
 
 def load_all():
-    # Tech companies
-    stock_data['Apple'] = load_data('AAPL')
-    stock_data['Google'] = load_data('GOOGL')
-    stock_data['Amazon'] = load_data('AMZN')
-    stock_data['Tesla'] = load_data('TSLA')
-    stock_data['Microsoft'] = load_data('MSFT')
-    # Service Industry
-    stock_data['McDonalds'] = load_data('MCD')
-    stock_data['Tim Hortons'] = load_data('QSR') #Restarant Brands International
-    stock_data["Wendys"] = load_data('WEN')
-    stock_data['Pizza Hut'] = load_data('YUM') #Yum! Brands, Inc
-    # Energy companies
-    stock_data['NRG Energy Inc'] = load_data('NRG')
-    stock_data['Exxon Mobil Corporation'] = load_data('XOM')
-    stock_data['Sunpower Corporation'] = load_data('SNPR')
-    stock_data['Suncor'] = load_data('SU')
-    # Pharmaceutical companies
-    stock_data['Pfizer Inc.'] = load_data('PFE')
-    stock_data['AbbVie Inc.'] = load_data('ABBV')
-    stock_data['Merck and Co Inc'] = load_data('MRK')
-    stock_data['Novartis'] = load_data('NVS')
-    stock_data['Johnson & Johnson'] = load_data('JNJ')
+    # # Tech companies
+    # stock_data['Apple'] = load_data('AAPL')
+    # stock_data['Google'] = load_data('GOOGL')
+    # stock_data['Amazon'] = load_data('AMZN')
+    # stock_data['Tesla'] = load_data('TSLA')
+    # stock_data['Microsoft'] = load_data('MSFT')
+    # # Service Industry
+    # stock_data['McDonalds'] = load_data('MCD')
+    # stock_data['Tim Hortons'] = load_data('QSR') #Restarant Brands International
+    # stock_data["Wendys"] = load_data('WEN')
+    # stock_data['Pizza Hut'] = load_data('YUM') #Yum! Brands, Inc
+    # # Energy companies
+    # stock_data['NRG Energy Inc'] = load_data('NRG')
+    # stock_data['Exxon Mobil Corporation'] = load_data('XOM')
+    # stock_data['Sunpower Corporation'] = load_data('SNPR')
+    # stock_data['Suncor'] = load_data('SU')
+    # # Pharmaceutical companies
+    # stock_data['Pfizer Inc.'] = load_data('PFE')
+    # stock_data['AbbVie Inc.'] = load_data('ABBV')
+    # stock_data['Merck and Co Inc'] = load_data('MRK')
+    # stock_data['Novartis'] = load_data('NVS')
+    # stock_data['Johnson & Johnson'] = load_data('JNJ')
+
+    companies = pd.read_csv('companies.csv', sep=",")
+    for i in range(len(companies)):
+        print("Loading stock " + str(i+1))
+        stock_data[companies.iloc[i,0]] = load_data(companies.iloc[i,1])
+
 
 def main():
 

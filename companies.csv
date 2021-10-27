@@ -1,0 +1,19 @@
+﻿Company Name,Ticker,Company Type,Actual Names (if applicable)
+Apple,AAPL,Technology,
+Google,GOOGL,Technology,
+Amazon,AMZN,Technology,
+Tesla,TSLA,Technology,
+Microsoft,MSFT,Technology,
+McDonalds,MCD,Service,
+Tim Hortons,QSR,Service,Restaurant Brands International
+Wendys,WEN,Service,
+Pizza Hut,YUM,Service,"Yum! Brands, Inc"
+NRG Energy Inc,NRG,Energy,
+Exxon Mobil Corporation,XOM,Energy,
+Sunpower Corporation,SNPR,Energy,
+Suncor,SU,Energy,
+Pfizer Inc,PFE,Pharmaceuticals,
+AbbVie Inc,ABBV,Pharmaceuticals,
+Merck and Co Inc,MRK,Pharmaceuticals,
+Novartis,NVS,Pharmaceuticals,
+Johnson & Johnson,JNJ,Pharmaceuticals,
