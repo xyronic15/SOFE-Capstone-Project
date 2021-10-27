@@ -9,7 +9,7 @@ TODAY = date.today().strftime("%Y-%m-%d")
 
 # patterns_bullish = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'white_soldiers', 'rising_method']
 patterns_bullish = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing']
-patterns_bearish = ['evening_star', 'three_black_crows']
+patterns_bearish = ['evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing']
 # patterns_df = dict.fromkeys(patterns)
 identified_data_bullish = {pattern: [] for pattern in patterns_bullish}
 identified_data_bearish = {pattern: [] for pattern in patterns_bearish}
@@ -63,12 +63,18 @@ def main():
         for company_name, df in stock_data.items():
             identified_data_bullish[pattern].extend(search(company_name, df, pattern))
             print(pattern, company_name)
+        pattern_data = pd.DataFrame(identified_data_bullish[pattern])
+        filename = "./data/identified/" + pattern + ".csv"
+        pattern_data.to_csv(filename)
         pattern_data_bullish.extend(identified_data_bullish[pattern])
     
     for pattern in identified_data_bearish.keys():
         for company_name, df in stock_data.items():
             identified_data_bearish[pattern].extend(search(company_name, df, pattern))
             print(pattern, company_name)
+        pattern_data = pd.DataFrame(identified_data_bearish[pattern])
+        filename = "./data/identified/" + pattern + ".csv"
+        pattern_data.to_csv(filename)
         pattern_data_bearish.extend(identified_data_bearish[pattern])
         
     # print(pattern_data_bullish)
