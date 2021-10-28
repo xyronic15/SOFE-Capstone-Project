@@ -182,6 +182,62 @@ def rising_three_methods(i, data, body_avg):
 
 
 # Bearish patterns
+# checks if the candlestick matches dark cloud cover
+def dark_cloud_cover(i, data, body_avg):
+    		
+    for n in range(2):
+    
+    	body_hi[n] = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_lo[n] = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body[n] = body_hi[n] - body_lo[n]
+        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
+        longBody[n] = body > body_avg
+        downTrend[n] = data ['Close'] < body_avg
+        smallBody[n] = body < body_avg
+        white_body = data.iloc[i-n, 1] < data.iloc[i-n, 4]
+        black_body[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
+        open[n] = data.iloc[i-n, 1]
+        close[n] = data.iloc[i-n, 4]
+        low[n] = data.iloc[i-n, 3]
+        hi[n] = data.iloc[i-n, 2]
+	
+        if (longBody[2] and smallBody[1] and downTrend and black_body[2] and 
+            body_hi[1] < body_lo[2] and black_body[1] and white_body and 
+            body_hi <= body_lo[2] and body_hi >= body_hi[1]):
+        	return True
+        			
+        return False
+
+# checks if the candlestick matches falling three methods
+def falling_three_methods(i, data, body_avg):
+    		
+    for n in range(4):
+    
+    	body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_lo = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body = body_hi - body_lo
+        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
+        longBody[n] = body > body_avg
+        upTrend[n] = data ['Close'] > body_avg
+        smallBody[n] = body < body_avg
+        white_body = data.iloc[i-n, 1] < data.iloc[i-n, 4]
+        black_body[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
+        open[n] = data.iloc[i-n, 1]
+        close[n] = data.iloc[i-n, 4]
+        low[n] = data.iloc[i-n, 3]
+        hi[n] = data.iloc[i-n, 2]
+	
+ 
+    
+    if (upTrend[4] and (longBody[4] and white_body[4]) and 
+        (smallBody[3] and black_body[3] and open[3]<high[4] and close[3]>low[4]) and 
+        (smallBody[2] and black_body[2] and open[2]<high[4] and close[2]>low[4]) and 
+        (smallBody[1] and black_body[1] and open[1]<high[4] and close[1]>low[4]) and 
+        (longBody and white_body and close>close[4])):
+	    return True
+			
+	return Flase
+
 
 # checks if the candlestick matches evening star pattern
 def evening_star(i, data, body_avg):
