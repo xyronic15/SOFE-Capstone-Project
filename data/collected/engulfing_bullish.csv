@@ -1,0 +1,241 @@
+﻿Name,Date
+Apple,2016-06-09
+Apple,2016-07-06
+Apple,2017-07-13
+Google,2015-01-14
+Google,2015-01-16
+Google,2016-05-06
+Google,2016-05-16
+Google,2016-07-06
+Google,2017-08-29
+Google,2018-09-11
+Google,2018-10-23
+Google,2018-11-15
+Amazon,2017-08-29
+Amazon,2017-10-04
+Amazon,2018-03-29
+Amazon,2019-01-02
+Amazon,2019-08-07
+Amazon,2019-08-13
+Amazon,2021-03-17
+Tesla,2015-01-21
+Tesla,2015-10-15
+Tesla,2016-06-06
+Tesla,2016-07-01
+Tesla,2017-07-19
+Tesla,2017-08-02
+Tesla,2017-10-03
+Tesla,2018-02-13
+Tesla,2018-03-21
+Tesla,2018-03-29
+Tesla,2018-04-04
+Tesla,2018-04-26
+Tesla,2019-02-05
+Tesla,2019-04-16
+Tesla,2019-05-03
+Tesla,2020-03-31
+Tesla,2021-03-30
+Microsoft,2015-03-13
+Microsoft,2016-03-08
+Microsoft,2016-05-16
+Microsoft,2016-06-16
+Microsoft,2020-12-11
+McDonalds,2016-09-30
+McDonalds,2016-10-06
+McDonalds,2018-03-07
+McDonalds,2019-09-23
+McDonalds,2020-03-02
+McDonalds,2020-03-19
+McDonalds,2020-04-02
+Tim Hortons,2015-03-19
+Tim Hortons,2015-06-05
+Tim Hortons,2015-09-17
+Tim Hortons,2017-08-02
+Tim Hortons,2018-01-02
+Tim Hortons,2018-04-18
+Tim Hortons,2018-05-08
+Tim Hortons,2018-09-18
+Tim Hortons,2018-10-05
+Tim Hortons,2019-01-03
+Tim Hortons,2019-10-03
+Tim Hortons,2019-11-05
+Tim Hortons,2020-01-16
+Wendys,2015-03-27
+Wendys,2015-08-17
+Wendys,2015-09-04
+Wendys,2015-09-18
+Wendys,2015-10-02
+Wendys,2015-10-07
+Wendys,2016-03-03
+Wendys,2016-06-02
+Wendys,2016-06-08
+Wendys,2016-07-06
+Wendys,2018-02-14
+Wendys,2018-05-03
+Wendys,2018-07-26
+Wendys,2020-12-09
+Wendys,2021-01-26
+Wendys,2021-02-02
+Wendys,2021-02-18
+Wendys,2021-10-20
+Pizza Hut,2015-01-16
+Pizza Hut,2015-10-02
+Pizza Hut,2015-10-26
+Pizza Hut,2015-11-17
+Pizza Hut,2016-10-21
+Pizza Hut,2017-04-04
+Pizza Hut,2017-09-28
+Pizza Hut,2018-05-30
+Pizza Hut,2020-03-19
+Pizza Hut,2020-07-10
+Pizza Hut,2020-07-14
+Pizza Hut,2021-02-18
+Pizza Hut,2021-10-13
+NRG Energy Inc,2015-01-26
+NRG Energy Inc,2015-01-30
+NRG Energy Inc,2015-02-24
+NRG Energy Inc,2015-06-16
+NRG Energy Inc,2015-07-07
+NRG Energy Inc,2015-07-30
+NRG Energy Inc,2015-08-14
+NRG Energy Inc,2015-10-20
+NRG Energy Inc,2015-11-10
+NRG Energy Inc,2015-12-18
+NRG Energy Inc,2016-09-15
+NRG Energy Inc,2016-10-13
+NRG Energy Inc,2018-02-01
+NRG Energy Inc,2018-02-14
+NRG Energy Inc,2018-07-02
+NRG Energy Inc,2018-07-31
+NRG Energy Inc,2019-04-30
+NRG Energy Inc,2019-05-10
+NRG Energy Inc,2020-07-30
+NRG Energy Inc,2020-09-24
+NRG Energy Inc,2020-10-02
+Exxon Mobil Corporation,2015-03-16
+Exxon Mobil Corporation,2015-03-18
+Exxon Mobil Corporation,2015-04-07
+Exxon Mobil Corporation,2015-08-06
+Exxon Mobil Corporation,2015-08-17
+Exxon Mobil Corporation,2015-12-14
+Exxon Mobil Corporation,2016-01-05
+Exxon Mobil Corporation,2016-08-24
+Exxon Mobil Corporation,2016-08-29
+Exxon Mobil Corporation,2017-02-15
+Exxon Mobil Corporation,2017-06-23
+Exxon Mobil Corporation,2017-07-27
+Exxon Mobil Corporation,2017-11-20
+Exxon Mobil Corporation,2018-08-20
+Exxon Mobil Corporation,2019-01-02
+Exxon Mobil Corporation,2019-05-15
+Exxon Mobil Corporation,2019-06-17
+Exxon Mobil Corporation,2019-08-13
+Exxon Mobil Corporation,2020-03-30
+Exxon Mobil Corporation,2020-07-14
+Exxon Mobil Corporation,2020-07-27
+Exxon Mobil Corporation,2020-09-25
+Exxon Mobil Corporation,2020-10-29
+Sunpower Corporation,2015-05-07
+Sunpower Corporation,2015-06-02
+Sunpower Corporation,2015-06-05
+Sunpower Corporation,2015-06-23
+Sunpower Corporation,2015-09-15
+Sunpower Corporation,2016-03-29
+Sunpower Corporation,2016-07-26
+Sunpower Corporation,2016-09-27
+Sunpower Corporation,2016-10-17
+Sunpower Corporation,2016-12-27
+Sunpower Corporation,2017-01-31
+Sunpower Corporation,2017-04-04
+Sunpower Corporation,2017-04-10
+Sunpower Corporation,2017-09-01
+Sunpower Corporation,2017-09-14
+Sunpower Corporation,2018-02-13
+Sunpower Corporation,2018-03-16
+Sunpower Corporation,2018-07-02
+Sunpower Corporation,2018-07-25
+Sunpower Corporation,2018-08-01
+Sunpower Corporation,2018-10-15
+Sunpower Corporation,2018-11-01
+Sunpower Corporation,2019-01-02
+Sunpower Corporation,2019-01-24
+Sunpower Corporation,2019-12-11
+Sunpower Corporation,2019-12-23
+Sunpower Corporation,2020-02-28
+Sunpower Corporation,2021-04-21
+Suncor,2015-01-27
+Suncor,2015-01-30
+Suncor,2015-05-15
+Suncor,2015-06-22
+Suncor,2015-07-13
+Suncor,2015-09-29
+Suncor,2016-06-02
+Suncor,2017-04-21
+Suncor,2017-06-23
+Suncor,2017-07-11
+Suncor,2018-02-16
+Suncor,2018-10-26
+Suncor,2020-03-30
+Suncor,2021-07-26
+Pfizer Inc,2015-10-01
+Pfizer Inc,2016-02-09
+Pfizer Inc,2016-08-17
+Pfizer Inc,2016-09-15
+Pfizer Inc,2017-12-08
+Pfizer Inc,2018-05-04
+Pfizer Inc,2019-02-08
+Pfizer Inc,2020-09-25
+Pfizer Inc,2021-01-05
+Pfizer Inc,2021-02-17
+Pfizer Inc,2021-03-03
+Pfizer Inc,2021-09-20
+Pfizer Inc,2021-10-22
+AbbVie Inc,2015-04-06
+AbbVie Inc,2015-08-12
+AbbVie Inc,2016-10-25
+AbbVie Inc,2017-02-14
+AbbVie Inc,2018-04-04
+AbbVie Inc,2018-06-28
+AbbVie Inc,2018-07-02
+AbbVie Inc,2018-11-27
+AbbVie Inc,2018-12-20
+AbbVie Inc,2019-01-17
+AbbVie Inc,2019-03-21
+AbbVie Inc,2019-05-06
+AbbVie Inc,2020-08-26
+AbbVie Inc,2020-08-31
+AbbVie Inc,2021-10-14
+Merck and Co Inc,2015-03-18
+Merck and Co Inc,2015-08-12
+Merck and Co Inc,2016-02-24
+Merck and Co Inc,2017-03-31
+Merck and Co Inc,2017-04-19
+Merck and Co Inc,2017-08-21
+Merck and Co Inc,2017-11-03
+Merck and Co Inc,2017-11-08
+Merck and Co Inc,2017-12-21
+Merck and Co Inc,2017-12-28
+Merck and Co Inc,2018-03-02
+Merck and Co Inc,2019-01-31
+Merck and Co Inc,2020-03-20
+Merck and Co Inc,2020-03-26
+Novartis,2015-03-09
+Novartis,2015-09-11
+Novartis,2015-10-02
+Novartis,2015-10-22
+Novartis,2017-04-04
+Novartis,2017-08-29
+Novartis,2018-04-04
+Novartis,2018-05-04
+Novartis,2019-05-06
+Novartis,2021-02-09
+Johnson & Johnson,2015-01-16
+Johnson & Johnson,2015-01-21
+Johnson & Johnson,2015-03-18
+Johnson & Johnson,2015-08-14
+Johnson & Johnson,2015-10-02
+Johnson & Johnson,2016-09-21
+Johnson & Johnson,2016-10-31
+Johnson & Johnson,2017-05-11
+Johnson & Johnson,2018-05-04
+Johnson & Johnson,2018-06-19
