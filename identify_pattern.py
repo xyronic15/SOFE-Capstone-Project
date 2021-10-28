@@ -20,6 +20,8 @@ def search(df):
     # dictionary to hold candlesticks that fit a pattern
     classified = {}
     hammer_count = 0
+    morning_star_count = 0
+    three_white_soldiers_count = 0
 
     for idx in range(len(df)):
         if idx < PREV_DEPTH:
@@ -27,12 +29,20 @@ def search(df):
 
         downtrend = df.iloc[idx, 4] < sma(idx, df, PREV_DEPTH)
         is_hammer = hammer(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
+        is_morning_star = morning_star(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
+        is_three_white_soldiers = three_white_soldiers(idx, df.iloc[idx], sma(idx, df, PREV_DEPTH))
 
         if downtrend:
             if is_hammer:
                 hammer_count += 1
                 #df['Pattern'] = 'Hammer'
                 #classified[idx] = 'Hammer'
+
+            if is_morning_star:
+                morning_star_count += 1
+
+            if  is_three_white_soldiers:
+                 three_white_soldiers_count += 1
 
 
 # checks if candlestick matches hammer pattern
@@ -54,6 +64,57 @@ def hammer(i, data, body_avg):
 
     return False
 
+# checks if candlestick matches morning star pattern
+def morning_star(i, data, body_avg):
+
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi - body_lo
+    long_body = body > body_avg
+    small_body = body < body_avg
+    prev_downtrend = data.iloc[i-1, 4] < sma(i-1, data, PREV_DEPTH_TREND)
+    prev_black_body = data.iloc[i-1, 1] > data.iloc[i-1, 4]
+    white_body = data.iloc[i, 1] < data.iloc[i, 4]
+    body_middle = body / 2 + body_lo
+
+    if long_body[2] and small_body[1] and long_body:
+        if prev_downtrend and prev_black_body[2] and body_hi[1] < body_lo[2] and white_body and body_hi >= body_middle[2] and body_hi < body_hi[2] and body_hi[1] < body_lo:
+            return True
+
+        return False
+
+# checks if candlestick matches three white soldiers pattern
+def three_white_soldiers(i, data):
+
+    long_body = [None] * 3
+    white_body = [None] * 3
+    ranges = [None] * 3
+    up_shadows = [None] * 3
+    wsld_no_up_sh = [None] * 3
+    up_shadow_percent = 5.0
+    open = [None] * 3
+    close = [None] * 3
+
+    for n in range(3):
+
+        body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_lo = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body = body_hi - body_lo
+        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
+        long_body[n] = body > body_avg
+        white_body = data.iloc[i-n, 1] < data.iloc[i-n, 4]
+        ranges[n] = data.iloc[i-n, 2] - data.iloc[i-n, 3]
+        up_shadows[n] = data.iloc[i-n, 2] - body_hi
+        wsld_no_up_sh[n] = (ranges[n] * (up_shadow_percent / 100)) > up_shadows[n]
+        open[n] = data.iloc[i-n, 1]
+        close[n] = data.iloc[i-n, 4]
+
+    if (long_body and long_body[1] and long_body[2] and white_body and white_body[1] and white_body[2] and
+            close > close[1] and close[1] > close[2] and open < close[1] and open > open[1] and open[1] < close[2] and
+            open[1] > open[2] and wsld_no_up_sh and wsld_no_up_sh[1] and wsld_no_up_sh[2]):
+        return True
+
+    return False
 
 # returns the moving average of the last n candlesticks
 def sma(i, data, depth):
