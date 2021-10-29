@@ -51,8 +51,14 @@ def search(name, df, pattern_type):
             is_match = piercing_line(idx, df)
         if pattern_type == 'three_black_crows':
             is_match = three_black_crows(idx, df)
+        if pattern_type == 'falling_three_methods':
+            is_match = falling_three_methods(idx, df)
+        if pattern_type == 'rising_three_methods':
+            is_match = rising_three_methods(idx, df)
+        if pattern_type == 'dark_cloud_cover':
+            is_match = dark_cloud_cover(idx, df)
 
-        
+        '''
         if is_match:
             classified.append({'Name': name, 'Date': df.iloc[idx, 0], 'Pattern': pattern_type, 'Closing Price': df.iloc[idx, 4],
                 'High after 1 day': df.iloc[min(idx+1, len(df)-1), 2], 'High after 2 days': df.iloc[min(idx+2, len(df)-1), 2],
@@ -60,12 +66,12 @@ def search(name, df, pattern_type):
                 'High after 5 days': df.iloc[min(idx+5, len(df)-1), 2], 'High after 6 days': df.iloc[min(idx+6, len(df)-1), 2],
                 'High after 7 days': df.iloc[min(idx+7, len(df)-1), 2], 'High after 8 days': df.iloc[min(idx+8, len(df)-1), 2],
                 'High after 9 days': df.iloc[min(idx+9, len(df)-1), 2], 'High after 10 days': df.iloc[min(idx+10, len(df)-1), 2],})
-        
         '''
+        
         if is_match:
             classified.append(
                 {'Date': df.iloc[idx, 0]})
-        '''
+        
 
     return classified
 
@@ -155,88 +161,116 @@ def inv_hammer(i, data, body_avg):
 
 
 # checks if candlestick matches rising three methods pattern
-def rising_three_methods(i, data, body_avg):
-    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
-    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
-    body = body_hi - body_lo
-    dojiBodyPercent = 5
-    shadowPercent = 5
-    Range = data['High'] - data['Low']
-    upTrend = data ['Close'] > body_avg
-    upShadow= data ['High'] - body_hi
-    dnSHadow = body_lo - data['low']
-    white_body = data.iloc[i, 1] < data.iloc[i, 4]
-    black_body = data.iloc[i, 1] > data.iloc[i, 4]
-    prev_body_hi = max(data.iloc[i - 1, 1], data.iloc[i - 1, 4])
-    prev_white_body = data.iloc[i - 1, 1] < data.iloc[i - 1, 4]
-    longBody = body > body_avg
-    hasUpHadow = upShadow > shadowPercent / 100 * body
-    hasDnShadow = dnSHadow > shadowPercent / 100 * body
-    isDojiBody = Range > 0 and body <= Range * dojiBodyPercent / 100
-    if (upTrend and (not isDojiBody or (hasUpHadow and hasDnShadow)) and
-            abs(data['High'] - prev_body_hi) <= body_avg * 0.05 and prev_white_body
-            and black_body and (longBody - 1)):
-        return True
+def rising_three_methods(i, data):
 
+    longBody = [None] * 5
+    upTrend = [None] * 5
+    smallBody = [None] * 5
+    black_body = [None] * 5
+    white_body = [None] * 5
+    open = [None] * 5
+    close = [None] * 5
+    low = [None] * 5
+    high = [None] * 5
+    		
+    for n in range(5):
+    
+        body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_lo = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body = body_hi - body_lo
+        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
+        longBody[n] = body > body_avg
+        upTrend[n] = data.iloc[i-n, 4] > body_avg
+        smallBody[n] = body < body_avg
+        white_body[n] = data.iloc[i-n, 1] < data.iloc[i-n, 4]
+        black_body[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
+        open[n] = data.iloc[i-n, 1]
+        close[n] = data.iloc[i-n, 4]
+        low[n] = data.iloc[i-n, 3]
+        high[n] = data.iloc[i-n, 2]
+    
+    if (upTrend[4] and (longBody[4] and white_body[4]) and
+        (smallBody[3] and black_body[3] and open[3]<high[4] and close[3]>low[4]) and 
+        (smallBody[2] and black_body[2] and open[2]<high[4] and close[2]>low[4]) and 
+        (smallBody[1] and black_body[1] and open[1]<high[4] and close[1]>low[4]) and 
+        (longBody[0] and white_body[0] and close[0]>close[4])):
+	    return True
+	
     return False
 
 
 # Bearish patterns
 # checks if the candlestick matches dark cloud cover
-def dark_cloud_cover(i, data, body_avg):
+def dark_cloud_cover(i, data):
+
+    longBody = [None] * 2
+    upTrend = [None] * 2
+    white_body = [None] * 2
+    black_body = [None] * 2
+    open = [None] * 2
+    close = [None] * 2
+    high = [None] * 2
+    body_mid = [None] * 2
     		
     for n in range(2):
     
-    	body_hi[n] = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
-        body_lo[n] = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
-        body[n] = body_hi[n] - body_lo[n]
-        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
-        longBody[n] = body > body_avg
-        downTrend[n] = data ['Close'] < body_avg
-        smallBody[n] = body < body_avg
-        white_body = data.iloc[i-n, 1] < data.iloc[i-n, 4]
-        black_body[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
-        open[n] = data.iloc[i-n, 1]
-        close[n] = data.iloc[i-n, 4]
-        low[n] = data.iloc[i-n, 3]
-        hi[n] = data.iloc[i-n, 2]
-	
-        if (longBody[2] and smallBody[1] and downTrend and black_body[2] and 
-            body_hi[1] < body_lo[2] and black_body[1] and white_body and 
-            body_hi <= body_lo[2] and body_hi >= body_hi[1]):
-        	return True
-        			
-        return False
-
-# checks if the candlestick matches falling three methods
-def falling_three_methods(i, data, body_avg):
-    		
-    for n in range(4):
-    
-    	body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
         body_lo = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
         body = body_hi - body_lo
         body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
         longBody[n] = body > body_avg
-        upTrend[n] = data ['Close'] > body_avg
+        upTrend[n] = data.iloc[i-n, 4] > body_avg
+        white_body[n] = data.iloc[i-n, 1] < data.iloc[i-n, 4]
+        black_body[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
+        open[n] = data.iloc[i-n, 1]
+        close[n] = data.iloc[i-n, 4]
+        high[n] = data.iloc[i-n, 2]
+        body_mid[n] = (body_hi + body_lo) / 2
+	
+    if ((upTrend[1] and white_body[1] and longBody[1]) and 
+        (black_body[0] and open[0] >= high[1] and close[0] < body_mid[1]
+        and close[0] > open[1])):
+        return True
+                
+    return False
+
+# checks if the candlestick matches falling three methods
+def falling_three_methods(i, data):
+    
+    longBody = [None] * 5
+    downTrend = [None] * 5
+    smallBody = [None] * 5
+    black_body = [None] * 5
+    white_body = [None] * 5
+    open = [None] * 5
+    close = [None] * 5
+    low = [None] * 5
+    high = [None] * 5
+    		
+    for n in range(5):
+    
+        body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_lo = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body = body_hi - body_lo
+        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
+        longBody[n] = body > body_avg
+        downTrend[n] = data.iloc[i-n, 4] < body_avg
         smallBody[n] = body < body_avg
-        white_body = data.iloc[i-n, 1] < data.iloc[i-n, 4]
+        white_body[n] = data.iloc[i-n, 1] < data.iloc[i-n, 4]
         black_body[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
         open[n] = data.iloc[i-n, 1]
         close[n] = data.iloc[i-n, 4]
         low[n] = data.iloc[i-n, 3]
-        hi[n] = data.iloc[i-n, 2]
-	
- 
+        high[n] = data.iloc[i-n, 2]
     
-    if (upTrend[4] and (longBody[4] and white_body[4]) and 
-        (smallBody[3] and black_body[3] and open[3]<high[4] and close[3]>low[4]) and 
-        (smallBody[2] and black_body[2] and open[2]<high[4] and close[2]>low[4]) and 
-        (smallBody[1] and black_body[1] and open[1]<high[4] and close[1]>low[4]) and 
-        (longBody and white_body and close>close[4])):
+    if (downTrend[4] and (longBody[4] and black_body[4]) and 
+        (smallBody[3] and white_body[3] and open[3]>low[4] and close[3]<high[4]) and 
+        (smallBody[2] and white_body[2] and open[2]>low[4] and close[2]<high[4]) and 
+        (smallBody[1] and white_body[1] and open[1]>low[4] and close[1]<high[4]) and 
+        (longBody[0] and black_body[0] and close<close[4])):
 	    return True
-			
-	return Flase
+	
+    return False
 
 
 # checks if the candlestick matches evening star pattern

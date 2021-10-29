@@ -5,8 +5,8 @@ from identify_pattern import search
 amazon = load_data('AMZN')
 
 
-evening_star_dates = search('Amazon', amazon, 'three_black_crows')
+rising_dates = search('Amazon', amazon, 'rising_three_methods')
 
-for i in range(len(evening_star_dates)):
+for i in range(len(rising_dates)):
     
-    print(evening_star_dates[i])
+    print(rising_dates[i])

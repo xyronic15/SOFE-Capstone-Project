@@ -4,8 +4,8 @@ from identify_pattern import search
 # get pandas dataframe of apple history
 tesla = load_data('TSLA')
 
-evening_star_dates = search('Tesla', tesla, 'three_black_crows')
+dark_cloud_dates = search('Tesla', tesla, 'dark_cloud_cover')
 
-for i in range(len(evening_star_dates)):
+for i in range(len(dark_cloud_dates)):
     
-    print(evening_star_dates[i])
+    print(dark_cloud_dates[i])
