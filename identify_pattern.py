@@ -22,6 +22,9 @@ def search(df):
     hammer_count = 0
     morning_star_count = 0
     three_white_soldiers_count = 0
+    hanging_man_count = 0
+    doji_count = 0
+
 
     for idx in range(len(df)):
         if idx < PREV_DEPTH:
@@ -44,6 +47,12 @@ def search(df):
             if  is_three_white_soldiers:
                  three_white_soldiers_count += 1
 
+        if uptrend:
+            if  hanging_man:
+                hanging_man_count += 1
+
+            if  doji:
+                doji_count += 1
 
 # checks if candlestick matches hammer pattern
 def hammer(i, data, body_avg):
@@ -65,20 +74,24 @@ def hammer(i, data, body_avg):
     return False
 
 # checks if candlestick matches morning star pattern
-def morning_star(i, data, body_avg):
+def morning_star(i, data):
 
-    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
-    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
-    body = body_hi - body_lo
-    long_body = body > body_avg
-    small_body = body < body_avg
-    prev_downtrend = data.iloc[i-1, 4] < sma(i-1, data, PREV_DEPTH_TREND)
-    prev_black_body = data.iloc[i-1, 1] > data.iloc[i-1, 4]
-    white_body = data.iloc[i, 1] < data.iloc[i, 4]
-    body_middle = body / 2 + body_lo
+    for n in range(3):
 
-    if long_body[2] and small_body[1] and long_body:
-        if prev_downtrend and prev_black_body[2] and body_hi[1] < body_lo[2] and white_body and body_hi >= body_middle[2] and body_hi < body_hi[2] and body_hi[1] < body_lo:
+        body_hi = max(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body_lo = min(data.iloc[i-n, 1], data.iloc[i-n, 4])
+        body = body_hi - body_lo
+        body_avg = body_sma(i-n, data, PREV_DEPTH_BODY_AVG)
+        long_body[n] = body > body_avg
+        prev_downtrend[n] = data ['Close'] < body_avg
+        small_body[n] = body < body_avg
+        white_body = data.iloc[i-n, 1] < data.iloc[i-n, 4]
+        prev_black_body[n] = data.iloc[i-n, 1] > data.iloc[i-n, 4]
+        body_middle[n] = body / 2 + body_lo
+
+        if (long_body[2] and small_body[1] and long_body and prev_downtrend and prev_black_body[2] and
+                body_hi[1] < body_lo[2] and white_body and body_hi >= body_middle[2] and body_hi < body_hi[2] and
+                body_hi[1] < body_lo):
             return True
 
         return False
@@ -109,9 +122,50 @@ def three_white_soldiers(i, data):
         open[n] = data.iloc[i-n, 1]
         close[n] = data.iloc[i-n, 4]
 
-    if (long_body and long_body[1] and long_body[2] and white_body and white_body[1] and white_body[2] and
-            close > close[1] and close[1] > close[2] and open < close[1] and open > open[1] and open[1] < close[2] and
-            open[1] > open[2] and wsld_no_up_sh and wsld_no_up_sh[1] and wsld_no_up_sh[2]):
+        if (long_body and long_body[1] and long_body[2] and white_body and white_body[1] and white_body[2] and
+                close > close[1] and close[1] > close[2] and open < close[1] and open > open[1] and open[1] < close[2] and
+                open[1] > open[2] and wsld_no_up_sh and wsld_no_up_sh[1] and wsld_no_up_sh[2]):
+            return True
+
+        return False
+
+# checks if candlestick matches hanging man pattern
+def hanging_man(i, data, body_avg):
+
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi - body_lo
+    shadow_percent = 5
+    factor = 2.0
+    small_body = body < body_avg
+    down_shadow = body_lo - data['Low']
+    uptrend = data ['Close'] > body_avg
+    up_shadow = data ['High'] - body_hi
+    has_up_shadow = up_shadow > shadow_percent / 100 * body
+
+    if uptrend and (small_body and body > 0 and body_lo > hl2 and down_shadow >= factor * body and not has_up_shadow):
+        return True
+
+    return False
+
+# checks if candlestick matches doji pattern
+def doji(i, data):
+
+    body_hi = max(data.iloc[i, 1], data.iloc[i, 4])
+    body_lo = min(data.iloc[i, 1], data.iloc[i, 4])
+    body = body_hi - body_lo
+    up_shadow = data ['High'] - body_hi
+    down_shadow = body_lo - data['low']
+    ranges = data['High'] - data['Low']
+    doji_body_percent = 5.0
+    shadow_equals_percent = 100.0
+    shadow_equals = up_shadow == down_shadow or (abs(up_shadow - down_shadow) / down_shadow * 100) < shadow_equals_percent and (abs(down_shadow - up_shadow) / up_shadow * 100) < shadow_equals_percent
+    is_doji_body = ranges > 0 and body <= ranges * doji_body_percent / 100
+    dragonfly_doji = is_doji_body and up_shadow <= body
+    gravestone_doji_one = is_doji_body and down_shadow <= body
+    doji = is_doji_body and shadow_equals
+
+    if doji and not dragonfly_doji and not gravestone_doji_one:
         return True
 
     return False
