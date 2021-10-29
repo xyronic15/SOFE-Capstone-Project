@@ -7,9 +7,9 @@ from identify_pattern import search
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-# patterns_bullish = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'white_soldiers', 'rising_method']
-patterns_bullish = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing']
-patterns_bearish = ['evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing']
+patterns_bullish = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'three_white_soldiers', 'rising_three_methods']
+# patterns_bullish = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing']
+patterns_bearish = ['evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing', 'doji', 'hanging_man', 'dark_cloud_cover', 'falling_three_methods']
 # patterns_df = dict.fromkeys(patterns)
 identified_data_bullish = {pattern: [] for pattern in patterns_bullish}
 identified_data_bearish = {pattern: [] for pattern in patterns_bearish}
@@ -23,28 +23,6 @@ def load_data(ticker):
 
 
 def load_all():
-    # # Tech companies
-    # stock_data['Apple'] = load_data('AAPL')
-    # stock_data['Google'] = load_data('GOOGL')
-    # stock_data['Amazon'] = load_data('AMZN')
-    # stock_data['Tesla'] = load_data('TSLA')
-    # stock_data['Microsoft'] = load_data('MSFT')
-    # # Service Industry
-    # stock_data['McDonalds'] = load_data('MCD')
-    # stock_data['Tim Hortons'] = load_data('QSR') #Restarant Brands International
-    # stock_data["Wendys"] = load_data('WEN')
-    # stock_data['Pizza Hut'] = load_data('YUM') #Yum! Brands, Inc
-    # # Energy companies
-    # stock_data['NRG Energy Inc'] = load_data('NRG')
-    # stock_data['Exxon Mobil Corporation'] = load_data('XOM')
-    # stock_data['Sunpower Corporation'] = load_data('SNPR')
-    # stock_data['Suncor'] = load_data('SU')
-    # # Pharmaceutical companies
-    # stock_data['Pfizer Inc.'] = load_data('PFE')
-    # stock_data['AbbVie Inc.'] = load_data('ABBV')
-    # stock_data['Merck and Co Inc'] = load_data('MRK')
-    # stock_data['Novartis'] = load_data('NVS')
-    # stock_data['Johnson & Johnson'] = load_data('JNJ')
 
     companies = pd.read_csv('companies.csv', sep=",")
     for i in range(len(companies)):
