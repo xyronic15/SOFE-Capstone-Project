@@ -15,9 +15,15 @@ def compare_data(pattern):
     Then it compares the resultant dataframe with the one generated from the collected folder to receive the percentage of successful identifications.
     '''
 
+    data = []
+
     # read the CSV files
     actual_dates = pd.read_csv("./collected/" + pattern + ".csv")
     identified_dates = pd.read_csv("./identified/" + pattern + ".csv")
+
+    if len(actual_dates) == 0 or len(identified_dates) == 0:
+        data.append({'Name': pattern, 'Success': 0, 'Actual Total': 0, 'Extra': 0})
+        return data
 
     # get the intersection dataframe
     intersection = pd.merge(actual_dates, identified_dates[['Name', 'Date']],how='inner')
@@ -27,7 +33,6 @@ def compare_data(pattern):
     extra_count = len(identified_dates) - len(intersection)
 
     # return a dictionary with the percentage and extra count
-    data = []
     data.append({'Name': pattern, 'Success': success_percent, 'Actual Total': len(actual_dates), 'Extra': extra_count})
     return data
 
@@ -64,7 +69,7 @@ def main():
 
     # patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'three_white_soldiers', 'rising_three_methods',
     #     'evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing', 'doji', 'hanging_man', 'dark_cloud_cover', 'falling_three_methods']
-    patterns = ['engulfing_bullish', 'piercing', 'evening_star']
+    patterns = ['engulfing_bullish', 'piercing', 'evening_star', 'three_black_crows']
     data = []
 
     for pattern in patterns:
