@@ -27,7 +27,8 @@ def compare_data(pattern):
     extra_count = len(identified_dates) - len(intersection)
 
     # return a dictionary with the percentage and extra count
-    data = {'Name': pattern, 'Success%': [success_percent], 'Extra': [extra_count]}
+    data = []
+    data.append({'Name': pattern, 'Success': success_percent, 'Extra': extra_count})
     return data
 
 def plot_info(df):
@@ -40,7 +41,7 @@ def plot_info(df):
         subplot_titles=("Percentage of Successful Identifications of Each Pattern", "Frequency of Extra Dates Identified for Each Pattern"))
 
     # success percentage bar chart
-    subplot.add_bar(row=1, col=1, y=df['Success%'], x=df['Name'], name="")
+    subplot.add_bar(row=1, col=1, y=df['Success'], x=df['Name'], name="")
 
     # extra dates count bar chart
     subplot.add_bar(row=1, col=2, y=df['Extra'], x=df['Name'], name="")
@@ -55,8 +56,17 @@ def plot_info(df):
     
 
 def main():
-    data = pd.DataFrame(compare_data("engulfing_bullish"))
-    plot_info(data)
+
+    # patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'three_white_soldiers', 'rising_three_methods',
+    #     'evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing', 'doji', 'hanging_man', 'dark_cloud_cover', 'falling_three_methods']
+    patterns = ['engulfing_bullish', 'piercing']
+    data = []
+
+    for pattern in patterns:
+        data.extend(compare_data(pattern))
+    df = pd.DataFrame(data)
+
+    plot_info(df)
     
     
 
