@@ -1,737 +1,737 @@
-Name	Date
-Apple	2015-05-20
-Apple	2015-07-28
-Apple	2015-09-22
-Apple	2015-09-20
-Apple	2015-11-06
-Apple	2016-02-11
-Apple	2016-07-29
-Apple	2016-10-12
-Apple	2017-01-18
-Apple	2017-02-15
-Apple	2017-03-06
-Apple	2017-03-16
-Apple	2017-03-31
-Apple	2017-04-03
-Apple	2017-05-02
-Apple	2017-05-04
-Apple	2017-05-22
-Apple	2018-04-13
-Apple	2018-04-18
-Apple	2018-07-31
-Apple	2019-03-04
-Apple	2019-06-11
-Apple	2019-07-16
-Apple	2019-07-30
-Apple	2019-10-09
-Apple	2019-11-05
-Apple	2019-12-10
-Apple	2020-01-29
-Apple	2020-05-06
-Apple	2020-07-16
-Apple	2020-09-09
-Apple	2021-01-19
-Apple	2021-07-28
-Apple	2021-08-05
-Apple	2021-08-17
-Apple	2021-10-25
-Google	2015-04-28
-Google	2015-06-03
-Google	2015-07-15
-Google	2015-09-16
-Google	2015-11-19
-Google	2016-01-15
-Google	2016-02-01
-Google	2016-02-22
-Google	2016-04-14
-Google	2016-05-31
-Google	2016-06-01
-Google	2016-07-05
-Google	2016-07-25
-Google	2016-08-19
-Google	2016-09-07
-Google	2016-09-20
-Google	2016-09-23
-Google	2016-10-12
-Google	2016-12-23
-Google	2017-06-22
-Google	2017-07-17
-Google	2017-09-21
-Google	2017-10-31
-Google	2018-03-15
-Google	2018-05-17
-Google	2018-09-26
-Google	2019-03-04
-Google	2019-07-29
-Google	2019-09-30
-Google	2019-10-24
-Google	2019-11-21
-Google	2020-01-10
-Google	2020-06-17
-Google	2020-08-17
-Google	2021-01-15
-Google	2021-01-22
-Google	2021-02-18
-Google	2021-03-23
-Google	2021-10-26
-Amazon	2015-01-08
-Amazon	2015-02-24
-Amazon	2015-03-24
-Amazon	2015-04-21
-Amazon	2015-05-12
-Amazon	2015-11-25
-Amazon	2016-04-08
-Amazon	2016-06-08
-Amazon	2016-06-21
-Amazon	2016-06-27
-Amazon	2016-06-29
-Amazon	2016-07-18
-Amazon	2016-09-08
-Amazon	2016-10-12
-Amazon	2017-01-31
-Amazon	2017-05-02
-Amazon	2017-05-09
-Amazon	2017-07-06
-Amazon	2017-08-09
-Amazon	2017-08-28
-Amazon	2017-11-15
-Amazon	2018-01-18
-Amazon	2018-04-03
-Amazon	2018-05-10
-Amazon	2018-05-21
-Amazon	2018-07-24
-Amazon	2018-11-08
-Amazon	2018-11-29
-Amazon	2018-12-24
-Amazon	2019-01-14
-Amazon	2019-01-25
-Amazon	2019-05-14
-Amazon	2019-06-19
-Amazon	2019-07-16
-Amazon	2019-08-16
-Amazon	2019-10-07
-Amazon	2020-01-13
-Amazon	2020-04-23
-Amazon	2020-05-13
-Amazon	24 aug so
-Amazon	2020-09-17
-Amazon	2020-11-05
-Amazon	2020-12-07
-Amazon	2021-01-12
-Amazon	2021-06-15
-Amazon	2021-06-23
-Amazon	2021-07-01
-Tesla	2015-03-24
-Tesla	2015-06-18
-Tesla	2015-06-19
-Tesla	2015-08-11
-Tesla	2015-09-21
-Tesla	2015-10-09
-Tesla	2015-10-22
-Tesla	2015-12-24
-Tesla	2016-03-31
-Tesla	2016-06-28
-Tesla	2016-07-22
-Tesla	2016-08-05
-Tesla	2017-02-15
-Tesla	2017-03-08
-Tesla	2017-05-11
-Tesla	2017-06-02
-Tesla	2017-07-07
-Tesla	2017-09-28
-Tesla	2018-06-27
-Tesla	2018-08-03
-Tesla	2019-02-22
-Tesla	2019-03-19
-Tesla	2019-04-11
-Tesla	2019-05-10
-Tesla	2019-09-27
-Tesla	2019-10-04
-Tesla	2019-10-15
-Tesla	2019-11-27
-Tesla	2020-02-04
-Tesla	2020-04-07
-Tesla	2020-06-09
-Tesla	2020-06-18
-Tesla	2020-07-24
-Tesla	2020-07-30
-Tesla	2020-10-12
-Tesla	2021-02-11
-Tesla	2021-05-17
-Tesla	2021-07-28
-Microsoft	2015-01-14
-Microsoft	2015-02-03
-Microsoft	2015-03-26
-Microsoft	2015-05-18
-Microsoft	2015-05-19
-Microsoft	2015-06-02
-Microsoft	2015-08-31
-Microsoft	2015-12-21
-Microsoft	2016-04-04
-Microsoft	2016-04-21
-Microsoft	2016-10-04
-Microsoft	2017-03-20
-Microsoft	2017-08-25
-Microsoft	2017-10-25
-Microsoft	2018-01-23
-Microsoft	2018-04-05
-Microsoft	2018-08-06
-Microsoft	2018-09-07
-Microsoft	2018-12-19
-Microsoft	2019-05-08
-Microsoft	2019-06-27
-Microsoft	2019-12-20
-Microsoft	2020-03-19
-Microsoft	2020-10-13
-Microsoft	2020-12-07
-Microsoft	2021-02-05
-Microsoft	2021-04-26
-Microsoft	2021-05-25
-McDonalds	2015-04-13
-McDonalds	2015-06-02
-McDonalds	2015-07-02
-McDonalds	2015-08-05
-McDonalds	2015-12-14
-McDonalds	2016-01-27
-McDonalds	2016-03-10
-McDonalds	2016-04-19
-McDonalds	2016-06-14
-McDonalds	2016-06-17
-McDonalds	2016-07-07
-McDonalds	2016-08-30
-McDonalds	2016-12-06
-McDonalds	2016-12-14
-McDonalds	2017-03-28
-McDonalds	2017-04-10
-McDonalds	2017-04-19
-McDonalds	2017-04-24
-McDonalds	2017-05-26
-McDonalds	2017-05-30
-McDonalds	2017-11-08
-McDonalds	2018-01-05
-McDonalds	2018-01-16
-McDonalds	2018-04-10
-McDonalds	2018-04-23
-McDonalds	2018-06-29
-McDonalds	2018-10-12
-McDonalds	2018-11-09
-McDonalds	2018-11-13
-McDonalds	2019-05-07
-McDonalds	2019-06-05
-McDonalds	2019-08-01
-McDonalds	2020-05-22
-McDonalds	2020-08-03
-McDonalds	2020-12-18
-McDonalds	2021-08-27
-McDonalds	2021-09-29
-McDonalds	2021-10-01
-Tim Hortons	2015-02-05
-Tim Hortons	2015-02-25
-Tim Hortons	2015-03-12
-Tim Hortons	2015-06-04
-Tim Hortons	2015-06-19
-Tim Hortons	2015-07-29
-Tim Hortons	2015-08-24
-Tim Hortons	2015-09-04
-Tim Hortons	2015-09-24
-Tim Hortons	2015-10-15
-Tim Hortons	2015-12-02
-Tim Hortons	2016-02-10
-Tim Hortons	2016-12-22
-Tim Hortons	2017-01-09
-Tim Hortons	2017-01-31
-Tim Hortons	2017-03-01
-Tim Hortons	2017-04-21
-Tim Hortons	2017-05-02
-Tim Hortons	2017-06-26
-Tim Hortons	2017-12-01
-Tim Hortons	2018-04-30
-Tim Hortons	2018-05-02
-Tim Hortons	2018-06-05
-Tim Hortons	2018-07-23
-Tim Hortons	2018-08-27
-Tim Hortons	2019-02-04
-Tim Hortons	2019-04-24
-Tim Hortons	2019-07-11
-Tim Hortons	2019-07-16
-Tim Hortons	2019-07-22
-Tim Hortons	2019-08-13
-Tim Hortons	2019-08-23
-Tim Hortons	2019-11-06
-Tim Hortons	2020-02-06
-Tim Hortons	2020-06-17
-Tim Hortons	2020-06-25
-Tim Hortons	2020-07-01
-Tim Hortons	2020-10-07
-Tim Hortons	2020-10-20
-Tim Hortons	2021-03-02
-Tim Hortons	2021-04-23
-Tim Hortons	2021-06-15
-Tim Hortons	2021-06-16
-Tim Hortons	2021-06-25
-Tim Hortons	2021-06-29
-Tim Hortons	2021-07-08
-Tim Hortons	2021-08-13
-Tim Hortons	2021-10-20
-Wendys	2015-02-06
-Wendys	2015-03-18
-Wendys	2015-05-05
-Wendys	2015-05-21
-Wendys	2015-05-27
-Wendys	2015-08-03
-Wendys	2015-09-16
-Wendys	2015-10-27
-Wendys	2015-12-28
-Wendys	2016-02-17
-Wendys	2016-02-24
-Wendys	2016-04-28
-Wendys	2016-05-27
-Wendys	2016-07-05
-Wendys	2016-08-02
-Wendys	2017-01-26
-Wendys	2017-02-06
-Wendys	2017-05-02
-Wendys	2017-06-07
-Wendys	2017-07-10
-Wendys	2017-09-28
-Wendys	2018-01-23
-Wendys	2018-03-14
-Wendys	2018-04-05
-Wendys	2018-05-01
-Wendys	2018-05-07
-Wendys	2018-07-11
-Wendys	2018-11-05
-Wendys	2018-12-10
-Wendys	2018-12-12
-Wendys	2018-12-13
-Wendys	2019-06-07
-Wendys	2019-07-16
-Wendys	2019-10-01
-Wendys	2020-03-25
-Wendys	2020-05-11
-Wendys	2020-08-21
-Wendys	2020-09-01
-Wendys	2020-09-02
-Wendys	2020-10-14
-Wendys	2020-10-29
-Wendys	2020-11-20
-Wendys	2021-01-06
-Wendys	2021-04-19
-Wendys	2021-05-06
-Wendys	2021-10-05
-Pizza Hut	2015-05-20
-Pizza Hut	2015-05-26
-Pizza Hut	2015-07-27
-Pizza Hut	2015-08-14
-Pizza Hut	2015-09-17
-Pizza Hut	2016-02-23
-Pizza Hut	2016-03-10
-Pizza Hut	2016-03-17
-Pizza Hut	2016-04-20
-Pizza Hut	2016-07-07
-Pizza Hut	2016-08-30
-Pizza Hut	2016-11-28
-Pizza Hut	2016-12-22
-Pizza Hut	2017-01-11
-Pizza Hut	2017-06-20
-Pizza Hut	2017-08-15
-Pizza Hut	2017-08-18
-Pizza Hut	2017-12-07
-Pizza Hut	2018-01-31
-Pizza Hut	2018-02-20
-Pizza Hut	2018-04-17
-Pizza Hut	2018-04-25
-Pizza Hut	2018-05-04
-Pizza Hut	2018-05-08
-Pizza Hut	2018-08-15
-Pizza Hut	2018-09-19
-Pizza Hut	2018-11-15
-Pizza Hut	2018-11-20
-Pizza Hut	2018-12-28
-Pizza Hut	2019-01-23
-Pizza Hut	2019-01-24
-Pizza Hut	2019-02-26
-Pizza Hut	2019-07-03
-Pizza Hut	2020-02-21
-Pizza Hut	2020-08-14
-Pizza Hut	2020-09-17
-Pizza Hut	2020-09-28
-Pizza Hut	2021-01-13
-Pizza Hut	2021-03-23
-Pizza Hut	2021-04-23
-Pizza Hut	2021-08-04
-Pizza Hut	2021-08-06
-Pizza Hut	2021-08-31
-NRG Energy Inc	2015-03-16
-NRG Energy Inc	2015-04-16
-NRG Energy Inc	2015-04-17
-NRG Energy Inc	2015-07-17
-NRG Energy Inc	2015-11-18
-NRG Energy Inc	2016-01-08
-NRG Energy Inc	2016-02-05
-NRG Energy Inc	2016-04-29
-NRG Energy Inc	2016-05-24
-NRG Energy Inc	2016-10-12
-NRG Energy Inc	2016-10-21
-NRG Energy Inc	2016-11-08
-NRG Energy Inc	2016-11-11
-NRG Energy Inc	2017-01-23
-NRG Energy Inc	2017-01-26
-NRG Energy Inc	2017-03-01
-NRG Energy Inc	2017-06-19
-NRG Energy Inc	2017-10-11
-NRG Energy Inc	2017-10-31
-NRG Energy Inc	2018-03-01
-NRG Energy Inc	2018-06-21
-NRG Energy Inc	2018-09-20
-NRG Energy Inc	2019-01-30
-NRG Energy Inc	2019-02-01
-NRG Energy Inc	2019-04-29
-NRG Energy Inc	2019-05-03
-NRG Energy Inc	2019-05-22
-NRG Energy Inc	2019-06-18
-NRG Energy Inc	2019-07-09
-NRG Energy Inc	2019-11-04
-NRG Energy Inc	2020-01-28
-NRG Energy Inc	2020-04-23
-NRG Energy Inc	2020-05-28
-NRG Energy Inc	2020-06-01
-NRG Energy Inc	2020-11-16
-NRG Energy Inc	2020-12-18
-NRG Energy Inc	2021-02-16
-NRG Energy Inc	2021-02-24
-NRG Energy Inc	2021-02-26
-NRG Energy Inc	2021-03-04
-NRG Energy Inc	2021-04-28
-NRG Energy Inc	2021-05-07
-NRG Energy Inc	2021-07-29
-NRG Energy Inc	2021-10-12
-NRG Energy Inc	2021-10-25
-Exxon Mobil Corporation	2015-01-07
-Exxon Mobil Corporation	2015-01-20
-Exxon Mobil Corporation	2015-04-06
-Exxon Mobil Corporation	2015-05-28
-Exxon Mobil Corporation	2015-06-26
-Exxon Mobil Corporation	2015-09-17
-Exxon Mobil Corporation	2016-06-14
-Exxon Mobil Corporation	2016-07-21
-Exxon Mobil Corporation	2016-08-11
-Exxon Mobil Corporation	2016-11-04
-Exxon Mobil Corporation	2016-11-22
-Exxon Mobil Corporation	2017-01-03
-Exxon Mobil Corporation	2017-04-10
-Exxon Mobil Corporation	2017-05-18
-Exxon Mobil Corporation	2017-07-07
-Exxon Mobil Corporation	2017-08-01
-Exxon Mobil Corporation	2017-09-07
-Exxon Mobil Corporation	2017-11-24
-Exxon Mobil Corporation	2017-12-01
-Exxon Mobil Corporation	2018-01-04
-Exxon Mobil Corporation	2018-01-24
-Exxon Mobil Corporation	2018-02-06
-Exxon Mobil Corporation	2018-06-01
-Exxon Mobil Corporation	2018-07-16
-Exxon Mobil Corporation	2018-08-02
-Exxon Mobil Corporation	2018-09-20
-Exxon Mobil Corporation	2018-10-05
-Exxon Mobil Corporation	2019-02-14
-Exxon Mobil Corporation	2019-02-26
-Exxon Mobil Corporation	2019-05-21
-Exxon Mobil Corporation	2019-06-13
-Exxon Mobil Corporation	2019-07-24
-Exxon Mobil Corporation	2020-07-16
-Exxon Mobil Corporation	2020-11-04
-Exxon Mobil Corporation	2021-01-04
-Exxon Mobil Corporation	2021-01-07
-Exxon Mobil Corporation	2021-02-26
-Exxon Mobil Corporation	2021-04-29
-Exxon Mobil Corporation	2021-06-09
-Exxon Mobil Corporation	2021-08-17
-Exxon Mobil Corporation	2021-09-28
-Exxon Mobil Corporation	2021-10-06
-Sunpower Corporation	2015-03-03
-Sunpower Corporation	2015-03-13
-Sunpower Corporation	2015-04-16
-Sunpower Corporation	2015-05-20
-Sunpower Corporation	2015-06-22
-Sunpower Corporation	2015-09-29
-Sunpower Corporation	2015-12-30
-Sunpower Corporation	2016-07-12
-Sunpower Corporation	2016-11-02
-Sunpower Corporation	2016-11-09
-Sunpower Corporation	2017-03-23
-Sunpower Corporation	2017-05-01
-Sunpower Corporation	2017-07-27
-Sunpower Corporation	2017-08-09
-Sunpower Corporation	2017-09-18
-Sunpower Corporation	2017-12-22
-Sunpower Corporation	2018-02-09
-Sunpower Corporation	2018-03-01
-Sunpower Corporation	2018-03-23
-Sunpower Corporation	2018-06-20
-Sunpower Corporation	2018-12-18
-Sunpower Corporation	2019-04-29
-Sunpower Corporation	2019-06-05
-Sunpower Corporation	2020-03-03
-Sunpower Corporation	2020-03-16
-Sunpower Corporation	2020-10-20
-Sunpower Corporation	2020-12-04
-Sunpower Corporation	2021-01-12
-Sunpower Corporation	2021-07-26
-Sunpower Corporation	2021-08-31
-Suncor	2015-03-25
-Suncor	2015-03-27
-Suncor	2015-04-17
-Suncor	2015-06-04
-Suncor	2015-06-26
-Suncor	2015-08-12
-Suncor	2016-02-08
-Suncor	2016-04-05
-Suncor	2016-06-09
-Suncor	2016-08-25
-Suncor	2016-09-30
-Suncor	2016-10-06
-Suncor	2016-12-02
-Suncor	2017-02-01
-Suncor	2017-02-02
-Suncor	2017-02-14
-Suncor	2017-03-20
-Suncor	2017-03-20
-Suncor	2017-04-18
-Suncor	2017-08-25
-Suncor	2017-12-29
-Suncor	2018-05-23
-Suncor	2018-05-31
-Suncor	2018-06-22
-Suncor	2018-08-01
-Suncor	2018-11-09
-Suncor	2018-11-20
-Suncor	2019-01-30
-Suncor	2019-07-10
-Suncor	2019-07-18
-Suncor	2019-08-06
-Suncor	2019-09-18
-Suncor	2019-10-04
-Suncor	2020-07-15
-Suncor	2020-09-11
-Suncor	2020-11-04
-Suncor	2021-03-24
-Suncor	2021-03-29
-Suncor	2021-06-08
-Suncor	2021-07-19
-Suncor	2021-09-16
-Suncor	2021-09-30
-Pfizer Inc	2015-05-18
-Pfizer Inc	2015-07-09
-Pfizer Inc	2015-08-13
-Pfizer Inc	2015-10-05
-Pfizer Inc	2015-10-12
-Pfizer Inc	2015-10-27
-Pfizer Inc	2015-12-30
-Pfizer Inc	2016-04-22
-Pfizer Inc	2016-06-07
-Pfizer Inc	2016-06-20
-Pfizer Inc	2016-06-27
-Pfizer Inc	2017-02-22
-Pfizer Inc	2017-03-08
-Pfizer Inc	2017-04-21
-Pfizer Inc	2017-05-03
-Pfizer Inc	2017-05-04
-Pfizer Inc	2017-06-16
-Pfizer Inc	2017-11-17
-Pfizer Inc	2017-12-28
-Pfizer Inc	2018-01-23
-Pfizer Inc	2018-01-29
-Pfizer Inc	2018-06-06
-Pfizer Inc	2018-06-07
-Pfizer Inc	2018-09-17
-Pfizer Inc	2018-11-08
-Pfizer Inc	2019-02-01
-Pfizer Inc	2019-07-22
-Pfizer Inc	2019-10-22
-Pfizer Inc	2019-11-14
-Pfizer Inc	2020-02-28
-Pfizer Inc	2020-05-04
-Pfizer Inc	2020-11-06
-Pfizer Inc	2021-01-08
-Pfizer Inc	2021-02-05
-Pfizer Inc	2021-02-25
-Pfizer Inc	2021-04-01
-Pfizer Inc	2021-04-14
-Pfizer Inc	2021-09-08
-AbbVie Inc	2015-02-24
-AbbVie Inc	2015-03-27
-AbbVie Inc	2015-05-19
-AbbVie Inc	2015-05-20
-AbbVie Inc	2015-06-23
-AbbVie Inc	2015-10-12
-AbbVie Inc	2016-04-26
-AbbVie Inc	2016-04-29
-AbbVie Inc	2016-11-08
-AbbVie Inc	2017-01-10
-AbbVie Inc	2017-02-21
-AbbVie Inc	2017-03-20
-AbbVie Inc	2017-03-28
-AbbVie Inc	2017-04-04
-AbbVie Inc	2017-07-05
-AbbVie Inc	2017-07-10
-AbbVie Inc	2017-11-16
-AbbVie Inc	2017-11-29
-AbbVie Inc	2018-01-10
-AbbVie Inc	2018-05-01
-AbbVie Inc	2018-07-03
-AbbVie Inc	2018-07-05
-AbbVie Inc	2018-09-17
-AbbVie Inc	2018-11-23
-AbbVie Inc	2019-05-08
-AbbVie Inc	2019-06-24
-AbbVie Inc	2019-07-15
-AbbVie Inc	2019-08-26
-AbbVie Inc	2019-12-03
-AbbVie Inc	2019-12-11
-AbbVie Inc	2020-01-07
-AbbVie Inc	2020-03-06
-AbbVie Inc	2020-03-25
-AbbVie Inc	2020-04-06
-AbbVie Inc	2020-04-29
-AbbVie Inc	2020-06-02
-AbbVie Inc	2020-06-29
-AbbVie Inc	2020-08-27
-AbbVie Inc	2020-10-20
-AbbVie Inc	2020-12-17
-AbbVie Inc	2021-04-30
-AbbVie Inc	2021-06-17
-AbbVie Inc	2021-08-05
-AbbVie Inc	2021-10-04
-Merck and Co Inc	2015-02-11
-Merck and Co Inc	2015-02-25
-Merck and Co Inc	2015-04-23
-Merck and Co Inc	2015-08-05
-Merck and Co Inc	2015-10-09
-Merck and Co Inc	2015-11-17
-Merck and Co Inc	2016-02-11
-Merck and Co Inc	2016-05-27
-Merck and Co Inc	2016-06-10
-Merck and Co Inc	2016-07-18
-Merck and Co Inc	2016-10-04
-Merck and Co Inc	2016-11-28
-Merck and Co Inc	2016-12-22
-Merck and Co Inc	2017-01-13
-Merck and Co Inc	2017-03-24
-Merck and Co Inc	2017-07-27
-Merck and Co Inc	2017-09-15
-Merck and Co Inc	2017-11-14
-Merck and Co Inc	2017-12-13
-Merck and Co Inc	2017-12-19
-Merck and Co Inc	2018-01-09
-Merck and Co Inc	2018-06-13
-Merck and Co Inc	2018-09-18
-Merck and Co Inc	2018-10-29
-Merck and Co Inc	2018-12-20
-Merck and Co Inc	2019-03-13
-Merck and Co Inc	2019-04-08
-Merck and Co Inc	2019-04-24
-Merck and Co Inc	2019-04-26
-Merck and Co Inc	2019-07-10
-Merck and Co Inc	2019-08-08
-Merck and Co Inc	2019-08-22
-Merck and Co Inc	2019-09-06
-Merck and Co Inc	2019-12-13
-Merck and Co Inc	2020-03-18
-Merck and Co Inc	2020-04-03
-Merck and Co Inc	2020-04-28
-Merck and Co Inc	2020-07-10
-Merck and Co Inc	2020-12-15
-Merck and Co Inc	2021-03-02
-Merck and Co Inc	2021-03-10
-Merck and Co Inc	2021-03-31
-Merck and Co Inc	2021-04-23
-Merck and Co Inc	2021-05-18
-Merck and Co Inc	2021-07-16
-Merck and Co Inc	2021-09-01
-Merck and Co Inc	2021-10-22
-Novartis	2015-02-25
-Novartis	2015-03-17
-Novartis	2015-03-23
-Novartis	2015-06-04
-Novartis	2015-06-09
-Novartis	2015-08-13
-Novartis	2015-08-24
-Novartis	2015-09-04
-Novartis	2016-01-07
-Novartis	2016-06-29
-Novartis	2016-11-01
-Novartis	2017-07-24
-Novartis	2017-10-02
-Novartis	2018-05-14
-Novartis	2018-06-22
-Novartis	2018-06-26
-Novartis	2018-07-30
-Novartis	2018-08-28
-Novartis	2018-09-24
-Novartis	2018-11-08
-Novartis	2019-01-09
-Novartis	2019-01-15
-Novartis	2019-03-27
-Novartis	2019-05-30
-Novartis	2019-06-18
-Novartis	2019-09-18
-Novartis	2019-10-09
-Novartis	2020-02-28
-Novartis	2020-04-03
-Novartis	2020-07-15
-Novartis	2020-10-09
-Novartis	2020-10-15
-Novartis	2020-12-07
-Novartis	2020-12-16
-Novartis	2020-12-24
-Novartis	2021-01-22
-Novartis	2021-02-03
-Novartis	2021-03-24
-Novartis	2021-05-19
-Novartis	2021-05-21
-Novartis	2021-06-02
-Novartis	2021-06-04
-Novartis	2021-08-09
-Novartis	2021-09-01
-Novartis	2021-10-19
-Johnson & Johnson	2015-04-23
-Johnson & Johnson	2015-06-11
-Johnson & Johnson	2015-09-24
-Johnson & Johnson	2015-10-21
-Johnson & Johnson	2015-11-20
-Johnson & Johnson	2016-02-16
-Johnson & Johnson	2016-03-04
-Johnson & Johnson	2016-05-18
-Johnson & Johnson	2016-05-27
-Johnson & Johnson	2016-09-02
-Johnson & Johnson	2016-09-14
-Johnson & Johnson	2016-10-04
-Johnson & Johnson	2016-10-12
-Johnson & Johnson	2017-04-03
-Johnson & Johnson	2017-04-11
-Johnson & Johnson	2017-04-20
-Johnson & Johnson	2017-04-21
-Johnson & Johnson	2017-05-09
-Johnson & Johnson	2017-05-19
-Johnson & Johnson	2017-08-10
-Johnson & Johnson	2017-09-20
-Johnson & Johnson	2017-12-15
-Johnson & Johnson	2018-01-18
-Johnson & Johnson	2018-04-10
-Johnson & Johnson	2018-07-12
-Johnson & Johnson	2018-09-13
-Johnson & Johnson	2018-12-07
-Johnson & Johnson	2019-02-14
-Johnson & Johnson	2019-03-08
-Johnson & Johnson	2019-10-07
-Johnson & Johnson	2019-12-12
-Johnson & Johnson	2020-01-08
-Johnson & Johnson	2020-06-02
-Johnson & Johnson	2020-06-04
-Johnson & Johnson	2021-01-15
-Johnson & Johnson	2021-03-17
-Johnson & Johnson	2021-03-30
-Johnson & Johnson	2021-06-29
-Johnson & Johnson	2021-07-06
-Johnson & Johnson	2021-08-09
+Name,Date
+Apple,2015-05-20
+Apple,2015-07-28
+Apple,2015-09-22
+Apple,2015-09-20
+Apple,2015-11-06
+Apple,2016-02-11
+Apple,2016-07-29
+Apple,2016-10-12
+Apple,2017-01-18
+Apple,2017-02-15
+Apple,2017-03-06
+Apple,2017-03-16
+Apple,2017-03-31
+Apple,2017-04-03
+Apple,2017-05-02
+Apple,2017-05-04
+Apple,2017-05-22
+Apple,2018-04-13
+Apple,2018-04-18
+Apple,2018-07-31
+Apple,2019-03-04
+Apple,2019-06-11
+Apple,2019-07-16
+Apple,2019-07-30
+Apple,2019-10-09
+Apple,2019-11-05
+Apple,2019-12-10
+Apple,2020-01-29
+Apple,2020-05-06
+Apple,2020-07-16
+Apple,2020-09-09
+Apple,2021-01-19
+Apple,2021-07-28
+Apple,2021-08-05
+Apple,2021-08-17
+Apple,2021-10-25
+Google,2015-04-28
+Google,2015-06-03
+Google,2015-07-15
+Google,2015-09-16
+Google,2015-11-19
+Google,2016-01-15
+Google,2016-02-01
+Google,2016-02-22
+Google,2016-04-14
+Google,2016-05-31
+Google,2016-06-01
+Google,2016-07-05
+Google,2016-07-25
+Google,2016-08-19
+Google,2016-09-07
+Google,2016-09-20
+Google,2016-09-23
+Google,2016-10-12
+Google,2016-12-23
+Google,2017-06-22
+Google,2017-07-17
+Google,2017-09-21
+Google,2017-10-31
+Google,2018-03-15
+Google,2018-05-17
+Google,2018-09-26
+Google,2019-03-04
+Google,2019-07-29
+Google,2019-09-30
+Google,2019-10-24
+Google,2019-11-21
+Google,2020-01-10
+Google,2020-06-17
+Google,2020-08-17
+Google,2021-01-15
+Google,2021-01-22
+Google,2021-02-18
+Google,2021-03-23
+Google,2021-10-26
+Amazon,2015-01-08
+Amazon,2015-02-24
+Amazon,2015-03-24
+Amazon,2015-04-21
+Amazon,2015-05-12
+Amazon,2015-11-25
+Amazon,2016-04-08
+Amazon,2016-06-08
+Amazon,2016-06-21
+Amazon,2016-06-27
+Amazon,2016-06-29
+Amazon,2016-07-18
+Amazon,2016-09-08
+Amazon,2016-10-12
+Amazon,2017-01-31
+Amazon,2017-05-02
+Amazon,2017-05-09
+Amazon,2017-07-06
+Amazon,2017-08-09
+Amazon,2017-08-28
+Amazon,2017-11-15
+Amazon,2018-01-18
+Amazon,2018-04-03
+Amazon,2018-05-10
+Amazon,2018-05-21
+Amazon,2018-07-24
+Amazon,2018-11-08
+Amazon,2018-11-29
+Amazon,2018-12-24
+Amazon,2019-01-14
+Amazon,2019-01-25
+Amazon,2019-05-14
+Amazon,2019-06-19
+Amazon,2019-07-16
+Amazon,2019-08-16
+Amazon,2019-10-07
+Amazon,2020-01-13
+Amazon,2020-04-23
+Amazon,2020-05-13
+Amazon,2020-08-24
+Amazon,2020-09-17
+Amazon,2020-11-05
+Amazon,2020-12-07
+Amazon,2021-01-12
+Amazon,2021-06-15
+Amazon,2021-06-23
+Amazon,2021-07-01
+Tesla,2015-03-24
+Tesla,2015-06-18
+Tesla,2015-06-19
+Tesla,2015-08-11
+Tesla,2015-09-21
+Tesla,2015-10-09
+Tesla,2015-10-22
+Tesla,2015-12-24
+Tesla,2016-03-31
+Tesla,2016-06-28
+Tesla,2016-07-22
+Tesla,2016-08-05
+Tesla,2017-02-15
+Tesla,2017-03-08
+Tesla,2017-05-11
+Tesla,2017-06-02
+Tesla,2017-07-07
+Tesla,2017-09-28
+Tesla,2018-06-27
+Tesla,2018-08-03
+Tesla,2019-02-22
+Tesla,2019-03-19
+Tesla,2019-04-11
+Tesla,2019-05-10
+Tesla,2019-09-27
+Tesla,2019-10-04
+Tesla,2019-10-15
+Tesla,2019-11-27
+Tesla,2020-02-04
+Tesla,2020-04-07
+Tesla,2020-06-09
+Tesla,2020-06-18
+Tesla,2020-07-24
+Tesla,2020-07-30
+Tesla,2020-10-12
+Tesla,2021-02-11
+Tesla,2021-05-17
+Tesla,2021-07-28
+Microsoft,2015-01-14
+Microsoft,2015-02-03
+Microsoft,2015-03-26
+Microsoft,2015-05-18
+Microsoft,2015-05-19
+Microsoft,2015-06-02
+Microsoft,2015-08-31
+Microsoft,2015-12-21
+Microsoft,2016-04-04
+Microsoft,2016-04-21
+Microsoft,2016-10-04
+Microsoft,2017-03-20
+Microsoft,2017-08-25
+Microsoft,2017-10-25
+Microsoft,2018-01-23
+Microsoft,2018-04-05
+Microsoft,2018-08-06
+Microsoft,2018-09-07
+Microsoft,2018-12-19
+Microsoft,2019-05-08
+Microsoft,2019-06-27
+Microsoft,2019-12-20
+Microsoft,2020-03-19
+Microsoft,2020-10-13
+Microsoft,2020-12-07
+Microsoft,2021-02-05
+Microsoft,2021-04-26
+Microsoft,2021-05-25
+McDonalds,2015-04-13
+McDonalds,2015-06-02
+McDonalds,2015-07-02
+McDonalds,2015-08-05
+McDonalds,2015-12-14
+McDonalds,2016-01-27
+McDonalds,2016-03-10
+McDonalds,2016-04-19
+McDonalds,2016-06-14
+McDonalds,2016-06-17
+McDonalds,2016-07-07
+McDonalds,2016-08-30
+McDonalds,2016-12-06
+McDonalds,2016-12-14
+McDonalds,2017-03-28
+McDonalds,2017-04-10
+McDonalds,2017-04-19
+McDonalds,2017-04-24
+McDonalds,2017-05-26
+McDonalds,2017-05-30
+McDonalds,2017-11-08
+McDonalds,2018-01-05
+McDonalds,2018-01-16
+McDonalds,2018-04-10
+McDonalds,2018-04-23
+McDonalds,2018-06-29
+McDonalds,2018-10-12
+McDonalds,2018-11-09
+McDonalds,2018-11-13
+McDonalds,2019-05-07
+McDonalds,2019-06-05
+McDonalds,2019-08-01
+McDonalds,2020-05-22
+McDonalds,2020-08-03
+McDonalds,2020-12-18
+McDonalds,2021-08-27
+McDonalds,2021-09-29
+McDonalds,2021-10-01
+Tim Hortons,2015-02-05
+Tim Hortons,2015-02-25
+Tim Hortons,2015-03-12
+Tim Hortons,2015-06-04
+Tim Hortons,2015-06-19
+Tim Hortons,2015-07-29
+Tim Hortons,2015-08-24
+Tim Hortons,2015-09-04
+Tim Hortons,2015-09-24
+Tim Hortons,2015-10-15
+Tim Hortons,2015-12-02
+Tim Hortons,2016-02-10
+Tim Hortons,2016-12-22
+Tim Hortons,2017-01-09
+Tim Hortons,2017-01-31
+Tim Hortons,2017-03-01
+Tim Hortons,2017-04-21
+Tim Hortons,2017-05-02
+Tim Hortons,2017-06-26
+Tim Hortons,2017-12-01
+Tim Hortons,2018-04-30
+Tim Hortons,2018-05-02
+Tim Hortons,2018-06-05
+Tim Hortons,2018-07-23
+Tim Hortons,2018-08-27
+Tim Hortons,2019-02-04
+Tim Hortons,2019-04-24
+Tim Hortons,2019-07-11
+Tim Hortons,2019-07-16
+Tim Hortons,2019-07-22
+Tim Hortons,2019-08-13
+Tim Hortons,2019-08-23
+Tim Hortons,2019-11-06
+Tim Hortons,2020-02-06
+Tim Hortons,2020-06-17
+Tim Hortons,2020-06-25
+Tim Hortons,2020-07-01
+Tim Hortons,2020-10-07
+Tim Hortons,2020-10-20
+Tim Hortons,2021-03-02
+Tim Hortons,2021-04-23
+Tim Hortons,2021-06-15
+Tim Hortons,2021-06-16
+Tim Hortons,2021-06-25
+Tim Hortons,2021-06-29
+Tim Hortons,2021-07-08
+Tim Hortons,2021-08-13
+Tim Hortons,2021-10-20
+Wendys,2015-02-06
+Wendys,2015-03-18
+Wendys,2015-05-05
+Wendys,2015-05-21
+Wendys,2015-05-27
+Wendys,2015-08-03
+Wendys,2015-09-16
+Wendys,2015-10-27
+Wendys,2015-12-28
+Wendys,2016-02-17
+Wendys,2016-02-24
+Wendys,2016-04-28
+Wendys,2016-05-27
+Wendys,2016-07-05
+Wendys,2016-08-02
+Wendys,2017-01-26
+Wendys,2017-02-06
+Wendys,2017-05-02
+Wendys,2017-06-07
+Wendys,2017-07-10
+Wendys,2017-09-28
+Wendys,2018-01-23
+Wendys,2018-03-14
+Wendys,2018-04-05
+Wendys,2018-05-01
+Wendys,2018-05-07
+Wendys,2018-07-11
+Wendys,2018-11-05
+Wendys,2018-12-10
+Wendys,2018-12-12
+Wendys,2018-12-13
+Wendys,2019-06-07
+Wendys,2019-07-16
+Wendys,2019-10-01
+Wendys,2020-03-25
+Wendys,2020-05-11
+Wendys,2020-08-21
+Wendys,2020-09-01
+Wendys,2020-09-02
+Wendys,2020-10-14
+Wendys,2020-10-29
+Wendys,2020-11-20
+Wendys,2021-01-06
+Wendys,2021-04-19
+Wendys,2021-05-06
+Wendys,2021-10-05
+Pizza Hut,2015-05-20
+Pizza Hut,2015-05-26
+Pizza Hut,2015-07-27
+Pizza Hut,2015-08-14
+Pizza Hut,2015-09-17
+Pizza Hut,2016-02-23
+Pizza Hut,2016-03-10
+Pizza Hut,2016-03-17
+Pizza Hut,2016-04-20
+Pizza Hut,2016-07-07
+Pizza Hut,2016-08-30
+Pizza Hut,2016-11-28
+Pizza Hut,2016-12-22
+Pizza Hut,2017-01-11
+Pizza Hut,2017-06-20
+Pizza Hut,2017-08-15
+Pizza Hut,2017-08-18
+Pizza Hut,2017-12-07
+Pizza Hut,2018-01-31
+Pizza Hut,2018-02-20
+Pizza Hut,2018-04-17
+Pizza Hut,2018-04-25
+Pizza Hut,2018-05-04
+Pizza Hut,2018-05-08
+Pizza Hut,2018-08-15
+Pizza Hut,2018-09-19
+Pizza Hut,2018-11-15
+Pizza Hut,2018-11-20
+Pizza Hut,2018-12-28
+Pizza Hut,2019-01-23
+Pizza Hut,2019-01-24
+Pizza Hut,2019-02-26
+Pizza Hut,2019-07-03
+Pizza Hut,2020-02-21
+Pizza Hut,2020-08-14
+Pizza Hut,2020-09-17
+Pizza Hut,2020-09-28
+Pizza Hut,2021-01-13
+Pizza Hut,2021-03-23
+Pizza Hut,2021-04-23
+Pizza Hut,2021-08-04
+Pizza Hut,2021-08-06
+Pizza Hut,2021-08-31
+NRG Energy Inc,2015-03-16
+NRG Energy Inc,2015-04-16
+NRG Energy Inc,2015-04-17
+NRG Energy Inc,2015-07-17
+NRG Energy Inc,2015-11-18
+NRG Energy Inc,2016-01-08
+NRG Energy Inc,2016-02-05
+NRG Energy Inc,2016-04-29
+NRG Energy Inc,2016-05-24
+NRG Energy Inc,2016-10-12
+NRG Energy Inc,2016-10-21
+NRG Energy Inc,2016-11-08
+NRG Energy Inc,2016-11-11
+NRG Energy Inc,2017-01-23
+NRG Energy Inc,2017-01-26
+NRG Energy Inc,2017-03-01
+NRG Energy Inc,2017-06-19
+NRG Energy Inc,2017-10-11
+NRG Energy Inc,2017-10-31
+NRG Energy Inc,2018-03-01
+NRG Energy Inc,2018-06-21
+NRG Energy Inc,2018-09-20
+NRG Energy Inc,2019-01-30
+NRG Energy Inc,2019-02-01
+NRG Energy Inc,2019-04-29
+NRG Energy Inc,2019-05-03
+NRG Energy Inc,2019-05-22
+NRG Energy Inc,2019-06-18
+NRG Energy Inc,2019-07-09
+NRG Energy Inc,2019-11-04
+NRG Energy Inc,2020-01-28
+NRG Energy Inc,2020-04-23
+NRG Energy Inc,2020-05-28
+NRG Energy Inc,2020-06-01
+NRG Energy Inc,2020-11-16
+NRG Energy Inc,2020-12-18
+NRG Energy Inc,2021-02-16
+NRG Energy Inc,2021-02-24
+NRG Energy Inc,2021-02-26
+NRG Energy Inc,2021-03-04
+NRG Energy Inc,2021-04-28
+NRG Energy Inc,2021-05-07
+NRG Energy Inc,2021-07-29
+NRG Energy Inc,2021-10-12
+NRG Energy Inc,2021-10-25
+Exxon Mobil Corporation,2015-01-07
+Exxon Mobil Corporation,2015-01-20
+Exxon Mobil Corporation,2015-04-06
+Exxon Mobil Corporation,2015-05-28
+Exxon Mobil Corporation,2015-06-26
+Exxon Mobil Corporation,2015-09-17
+Exxon Mobil Corporation,2016-06-14
+Exxon Mobil Corporation,2016-07-21
+Exxon Mobil Corporation,2016-08-11
+Exxon Mobil Corporation,2016-11-04
+Exxon Mobil Corporation,2016-11-22
+Exxon Mobil Corporation,2017-01-03
+Exxon Mobil Corporation,2017-04-10
+Exxon Mobil Corporation,2017-05-18
+Exxon Mobil Corporation,2017-07-07
+Exxon Mobil Corporation,2017-08-01
+Exxon Mobil Corporation,2017-09-07
+Exxon Mobil Corporation,2017-11-24
+Exxon Mobil Corporation,2017-12-01
+Exxon Mobil Corporation,2018-01-04
+Exxon Mobil Corporation,2018-01-24
+Exxon Mobil Corporation,2018-02-06
+Exxon Mobil Corporation,2018-06-01
+Exxon Mobil Corporation,2018-07-16
+Exxon Mobil Corporation,2018-08-02
+Exxon Mobil Corporation,2018-09-20
+Exxon Mobil Corporation,2018-10-05
+Exxon Mobil Corporation,2019-02-14
+Exxon Mobil Corporation,2019-02-26
+Exxon Mobil Corporation,2019-05-21
+Exxon Mobil Corporation,2019-06-13
+Exxon Mobil Corporation,2019-07-24
+Exxon Mobil Corporation,2020-07-16
+Exxon Mobil Corporation,2020-11-04
+Exxon Mobil Corporation,2021-01-04
+Exxon Mobil Corporation,2021-01-07
+Exxon Mobil Corporation,2021-02-26
+Exxon Mobil Corporation,2021-04-29
+Exxon Mobil Corporation,2021-06-09
+Exxon Mobil Corporation,2021-08-17
+Exxon Mobil Corporation,2021-09-28
+Exxon Mobil Corporation,2021-10-06
+Sunpower Corporation,2015-03-03
+Sunpower Corporation,2015-03-13
+Sunpower Corporation,2015-04-16
+Sunpower Corporation,2015-05-20
+Sunpower Corporation,2015-06-22
+Sunpower Corporation,2015-09-29
+Sunpower Corporation,2015-12-30
+Sunpower Corporation,2016-07-12
+Sunpower Corporation,2016-11-02
+Sunpower Corporation,2016-11-09
+Sunpower Corporation,2017-03-23
+Sunpower Corporation,2017-05-01
+Sunpower Corporation,2017-07-27
+Sunpower Corporation,2017-08-09
+Sunpower Corporation,2017-09-18
+Sunpower Corporation,2017-12-22
+Sunpower Corporation,2018-02-09
+Sunpower Corporation,2018-03-01
+Sunpower Corporation,2018-03-23
+Sunpower Corporation,2018-06-20
+Sunpower Corporation,2018-12-18
+Sunpower Corporation,2019-04-29
+Sunpower Corporation,2019-06-05
+Sunpower Corporation,2020-03-03
+Sunpower Corporation,2020-03-16
+Sunpower Corporation,2020-10-20
+Sunpower Corporation,2020-12-04
+Sunpower Corporation,2021-01-12
+Sunpower Corporation,2021-07-26
+Sunpower Corporation,2021-08-31
+Suncor,2015-03-25
+Suncor,2015-03-27
+Suncor,2015-04-17
+Suncor,2015-06-04
+Suncor,2015-06-26
+Suncor,2015-08-12
+Suncor,2016-02-08
+Suncor,2016-04-05
+Suncor,2016-06-09
+Suncor,2016-08-25
+Suncor,2016-09-30
+Suncor,2016-10-06
+Suncor,2016-12-02
+Suncor,2017-02-01
+Suncor,2017-02-02
+Suncor,2017-02-14
+Suncor,2017-03-20
+Suncor,2017-03-20
+Suncor,2017-04-18
+Suncor,2017-08-25
+Suncor,2017-12-29
+Suncor,2018-05-23
+Suncor,2018-05-31
+Suncor,2018-06-22
+Suncor,2018-08-01
+Suncor,2018-11-09
+Suncor,2018-11-20
+Suncor,2019-01-30
+Suncor,2019-07-10
+Suncor,2019-07-18
+Suncor,2019-08-06
+Suncor,2019-09-18
+Suncor,2019-10-04
+Suncor,2020-07-15
+Suncor,2020-09-11
+Suncor,2020-11-04
+Suncor,2021-03-24
+Suncor,2021-03-29
+Suncor,2021-06-08
+Suncor,2021-07-19
+Suncor,2021-09-16
+Suncor,2021-09-30
+Pfizer Inc,2015-05-18
+Pfizer Inc,2015-07-09
+Pfizer Inc,2015-08-13
+Pfizer Inc,2015-10-05
+Pfizer Inc,2015-10-12
+Pfizer Inc,2015-10-27
+Pfizer Inc,2015-12-30
+Pfizer Inc,2016-04-22
+Pfizer Inc,2016-06-07
+Pfizer Inc,2016-06-20
+Pfizer Inc,2016-06-27
+Pfizer Inc,2017-02-22
+Pfizer Inc,2017-03-08
+Pfizer Inc,2017-04-21
+Pfizer Inc,2017-05-03
+Pfizer Inc,2017-05-04
+Pfizer Inc,2017-06-16
+Pfizer Inc,2017-11-17
+Pfizer Inc,2017-12-28
+Pfizer Inc,2018-01-23
+Pfizer Inc,2018-01-29
+Pfizer Inc,2018-06-06
+Pfizer Inc,2018-06-07
+Pfizer Inc,2018-09-17
+Pfizer Inc,2018-11-08
+Pfizer Inc,2019-02-01
+Pfizer Inc,2019-07-22
+Pfizer Inc,2019-10-22
+Pfizer Inc,2019-11-14
+Pfizer Inc,2020-02-28
+Pfizer Inc,2020-05-04
+Pfizer Inc,2020-11-06
+Pfizer Inc,2021-01-08
+Pfizer Inc,2021-02-05
+Pfizer Inc,2021-02-25
+Pfizer Inc,2021-04-01
+Pfizer Inc,2021-04-14
+Pfizer Inc,2021-09-08
+AbbVie Inc,2015-02-24
+AbbVie Inc,2015-03-27
+AbbVie Inc,2015-05-19
+AbbVie Inc,2015-05-20
+AbbVie Inc,2015-06-23
+AbbVie Inc,2015-10-12
+AbbVie Inc,2016-04-26
+AbbVie Inc,2016-04-29
+AbbVie Inc,2016-11-08
+AbbVie Inc,2017-01-10
+AbbVie Inc,2017-02-21
+AbbVie Inc,2017-03-20
+AbbVie Inc,2017-03-28
+AbbVie Inc,2017-04-04
+AbbVie Inc,2017-07-05
+AbbVie Inc,2017-07-10
+AbbVie Inc,2017-11-16
+AbbVie Inc,2017-11-29
+AbbVie Inc,2018-01-10
+AbbVie Inc,2018-05-01
+AbbVie Inc,2018-07-03
+AbbVie Inc,2018-07-05
+AbbVie Inc,2018-09-17
+AbbVie Inc,2018-11-23
+AbbVie Inc,2019-05-08
+AbbVie Inc,2019-06-24
+AbbVie Inc,2019-07-15
+AbbVie Inc,2019-08-26
+AbbVie Inc,2019-12-03
+AbbVie Inc,2019-12-11
+AbbVie Inc,2020-01-07
+AbbVie Inc,2020-03-06
+AbbVie Inc,2020-03-25
+AbbVie Inc,2020-04-06
+AbbVie Inc,2020-04-29
+AbbVie Inc,2020-06-02
+AbbVie Inc,2020-06-29
+AbbVie Inc,2020-08-27
+AbbVie Inc,2020-10-20
+AbbVie Inc,2020-12-17
+AbbVie Inc,2021-04-30
+AbbVie Inc,2021-06-17
+AbbVie Inc,2021-08-05
+AbbVie Inc,2021-10-04
+Merck and Co Inc,2015-02-11
+Merck and Co Inc,2015-02-25
+Merck and Co Inc,2015-04-23
+Merck and Co Inc,2015-08-05
+Merck and Co Inc,2015-10-09
+Merck and Co Inc,2015-11-17
+Merck and Co Inc,2016-02-11
+Merck and Co Inc,2016-05-27
+Merck and Co Inc,2016-06-10
+Merck and Co Inc,2016-07-18
+Merck and Co Inc,2016-10-04
+Merck and Co Inc,2016-11-28
+Merck and Co Inc,2016-12-22
+Merck and Co Inc,2017-01-13
+Merck and Co Inc,2017-03-24
+Merck and Co Inc,2017-07-27
+Merck and Co Inc,2017-09-15
+Merck and Co Inc,2017-11-14
+Merck and Co Inc,2017-12-13
+Merck and Co Inc,2017-12-19
+Merck and Co Inc,2018-01-09
+Merck and Co Inc,2018-06-13
+Merck and Co Inc,2018-09-18
+Merck and Co Inc,2018-10-29
+Merck and Co Inc,2018-12-20
+Merck and Co Inc,2019-03-13
+Merck and Co Inc,2019-04-08
+Merck and Co Inc,2019-04-24
+Merck and Co Inc,2019-04-26
+Merck and Co Inc,2019-07-10
+Merck and Co Inc,2019-08-08
+Merck and Co Inc,2019-08-22
+Merck and Co Inc,2019-09-06
+Merck and Co Inc,2019-12-13
+Merck and Co Inc,2020-03-18
+Merck and Co Inc,2020-04-03
+Merck and Co Inc,2020-04-28
+Merck and Co Inc,2020-07-10
+Merck and Co Inc,2020-12-15
+Merck and Co Inc,2021-03-02
+Merck and Co Inc,2021-03-10
+Merck and Co Inc,2021-03-31
+Merck and Co Inc,2021-04-23
+Merck and Co Inc,2021-05-18
+Merck and Co Inc,2021-07-16
+Merck and Co Inc,2021-09-01
+Merck and Co Inc,2021-10-22
+Novartis,2015-02-25
+Novartis,2015-03-17
+Novartis,2015-03-23
+Novartis,2015-06-04
+Novartis,2015-06-09
+Novartis,2015-08-13
+Novartis,2015-08-24
+Novartis,2015-09-04
+Novartis,2016-01-07
+Novartis,2016-06-29
+Novartis,2016-11-01
+Novartis,2017-07-24
+Novartis,2017-10-02
+Novartis,2018-05-14
+Novartis,2018-06-22
+Novartis,2018-06-26
+Novartis,2018-07-30
+Novartis,2018-08-28
+Novartis,2018-09-24
+Novartis,2018-11-08
+Novartis,2019-01-09
+Novartis,2019-01-15
+Novartis,2019-03-27
+Novartis,2019-05-30
+Novartis,2019-06-18
+Novartis,2019-09-18
+Novartis,2019-10-09
+Novartis,2020-02-28
+Novartis,2020-04-03
+Novartis,2020-07-15
+Novartis,2020-10-09
+Novartis,2020-10-15
+Novartis,2020-12-07
+Novartis,2020-12-16
+Novartis,2020-12-24
+Novartis,2021-01-22
+Novartis,2021-02-03
+Novartis,2021-03-24
+Novartis,2021-05-19
+Novartis,2021-05-21
+Novartis,2021-06-02
+Novartis,2021-06-04
+Novartis,2021-08-09
+Novartis,2021-09-01
+Novartis,2021-10-19
+Johnson & Johnson,2015-04-23
+Johnson & Johnson,2015-06-11
+Johnson & Johnson,2015-09-24
+Johnson & Johnson,2015-10-21
+Johnson & Johnson,2015-11-20
+Johnson & Johnson,2016-02-16
+Johnson & Johnson,2016-03-04
+Johnson & Johnson,2016-05-18
+Johnson & Johnson,2016-05-27
+Johnson & Johnson,2016-09-02
+Johnson & Johnson,2016-09-14
+Johnson & Johnson,2016-10-04
+Johnson & Johnson,2016-10-12
+Johnson & Johnson,2017-04-03
+Johnson & Johnson,2017-04-11
+Johnson & Johnson,2017-04-20
+Johnson & Johnson,2017-04-21
+Johnson & Johnson,2017-05-09
+Johnson & Johnson,2017-05-19
+Johnson & Johnson,2017-08-10
+Johnson & Johnson,2017-09-20
+Johnson & Johnson,2017-12-15
+Johnson & Johnson,2018-01-18
+Johnson & Johnson,2018-04-10
+Johnson & Johnson,2018-07-12
+Johnson & Johnson,2018-09-13
+Johnson & Johnson,2018-12-07
+Johnson & Johnson,2019-02-14
+Johnson & Johnson,2019-03-08
+Johnson & Johnson,2019-10-07
+Johnson & Johnson,2019-12-12
+Johnson & Johnson,2020-01-08
+Johnson & Johnson,2020-06-02
+Johnson & Johnson,2020-06-04
+Johnson & Johnson,2021-01-15
+Johnson & Johnson,2021-03-17
+Johnson & Johnson,2021-03-30
+Johnson & Johnson,2021-06-29
+Johnson & Johnson,2021-07-06
+Johnson & Johnson,2021-08-09
