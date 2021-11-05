@@ -15,6 +15,8 @@ def compare_data(pattern):
     Then it compares the resultant dataframe with the one generated from the collected folder to receive the percentage of successful identifications.
     '''
 
+    print(pattern)
+
     data = []
 
     # read the CSV files
@@ -63,13 +65,16 @@ def plot_info(df):
     subplot['layout']['yaxis2']['title']='Frequency'
     subplot['layout']['yaxis3']['title']='Frequency'
     subplot.show()
+
+    # save the plot
+    subplot.write_image("comparison.png")
     
 
 def main():
 
     # patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'three_white_soldiers', 'rising_three_methods',
     #     'evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing', 'doji', 'hanging_man', 'dark_cloud_cover', 'falling_three_methods']
-    patterns = ['engulfing_bullish', 'piercing', 'evening_star', 'three_black_crows']
+    patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'evening_star', 'three_black_crows']
     data = []
 
     for pattern in patterns:
