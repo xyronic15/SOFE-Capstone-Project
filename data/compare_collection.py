@@ -5,7 +5,7 @@ and displays graphs comparing them.
 
 import pandas as pd
 import plotly.graph_objects as go
-from plotly.offline import plot
+import plotly.io as pio
 from plotly.subplots import make_subplots
 
 def compare_data(pattern):
@@ -67,14 +67,15 @@ def plot_info(df):
     subplot.show()
 
     # save the plot
-    subplot.write_image("comparison.png")
+    pio.write_image(subplot, "comparison.png",width=1536,height=864)
+    subplot.write_html("comparison.html")
     
 
 def main():
 
-    # patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'three_white_soldiers', 'rising_three_methods',
-    #     'evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing', 'doji', 'hanging_man', 'dark_cloud_cover', 'falling_three_methods']
-    patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'evening_star', 'three_black_crows']
+    patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'three_white_soldiers', 'rising_three_methods',
+        'evening_star', 'three_black_crows', 'shooting_star', 'bearish_engulfing', 'doji', 'hanging_man', 'dark_cloud_cover', 'falling_three_methods']
+    # patterns = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'evening_star', 'three_black_crows']
     data = []
 
     for pattern in patterns:
