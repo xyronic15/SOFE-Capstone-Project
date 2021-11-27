@@ -4,7 +4,7 @@ import yfinance as yf
 from identify_pattern import search
 
 # date range for collecting data from START to TODAY
-START = "2015-01-01"
+START = "2021-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
 patterns_bullish = ['hammer', 'inv_hammer', 'engulfing_bullish', 'piercing', 'morning_star', 'three_white_soldiers', 'rising_three_methods']
@@ -16,8 +16,8 @@ identified_data_bearish = {pattern: [] for pattern in patterns_bearish}
 stock_data = {}
 
 
-def load_data(ticker):
-    data = yf.download(ticker, START, TODAY)
+def load_data(ticker, start, end):
+    data = yf.download(ticker, start, end)
     data.reset_index(inplace=True)
     return data
 
@@ -27,7 +27,7 @@ def load_all():
     companies = pd.read_csv('companies.csv', sep=",")
     for i in range(len(companies)):
         print("Loading stock " + str(i+1))
-        stock_data[companies.iloc[i,0]] = load_data(companies.iloc[i,1])
+        stock_data[companies.iloc[i,0]] = load_data(companies.iloc[i,1], START, TODAY)
 
 
 def main():
